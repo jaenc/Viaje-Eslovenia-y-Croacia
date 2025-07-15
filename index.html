@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Viaje: Eslovenia y Croacia 2024</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 20px auto;
+            overflow: hidden;
+            padding: 25px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        header {
+            background: #007bff; /* Azul primario */
+            color: #ffffff;
+            padding: 1.5rem 0;
+            text-align: center;
+            margin-bottom: 25px;
+            border-radius: 8px 8px 0 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            font-weight: 600;
+        }
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            background: #e9ecef;
+            padding: 15px;
+            margin-bottom: 35px;
+            border-radius: 6px;
+        }
+        .timeline a {
+            color: #007bff;
+            background-color: #ffffff;
+            border: 1px solid #007bff;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .timeline a:hover, .timeline a.active {
+            background-color: #007bff;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .day-section {
+            margin-bottom: 35px;
+            padding: 25px;
+            background-color: #fdfdff; /* Un blanco ligeramente diferente */
+            border-left: 6px solid #007bff;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .day-section h2 {
+            color: #0056b3; /* Un azul más oscuro */
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 12px;
+            font-size: 1.8em;
+            margin-top: 0;
+        }
+        .day-section h3 {
+            color: #343a40;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+        ul {
+            list-style: none;
+            padding-left: 5px;
+        }
+        ul li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        ul li::before {
+            content: "➔"; /* Flecha como marcador */
+            position: absolute;
+            left: 0;
+            color: #007bff;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .google-maps-link {
+            display: inline-block;
+            background-color: #28a745; /* Verde para Google Maps */
+            color: white !important; /* Forzar color de texto */
+            padding: 9px 18px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 8px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .google-maps-link:hover {
+            background-color: #218838; /* Verde más oscuro al pasar el cursor */
+        }
+        .accommodation, .food, .highlight, .advice {
+            margin-top: 18px;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 0.95em;
+        }
+        .accommodation { background-color: #e6f7ff; border-left: 4px solid #1890ff; } /* Azul claro */
+        .food { background-color: #f6ffed; border-left: 4px solid #52c41a; } /* Verde claro */
+        .highlight { background-color: #fffbe6; border-left: 4px solid #faad14; } /* Amarillo claro */
+        .advice { background-color: #e6f7ff; border-left: 4px solid #17a2b8; } /* Cian claro para consejos */
+
+        .accommodation strong, .food strong, .highlight strong, .advice strong {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #333;
+        }
+        .route-details { margin-top: 5px; font-style: italic; color: #555; }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+            .timeline {
+                justify-content: flex-start; /* Alinea los botones a la izquierda en móvil */
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none; /* Firefox */
+            }
+            .timeline::-webkit-scrollbar {
+                display: none; /* Safari and Chrome */
+            }
+            .timeline a {
+                padding: 8px 12px;
+                font-size: 0.9em;
+                flex-shrink: 0;
+            }
+            header h1 {
+                font-size: 1.8em;
+            }
+            .day-section h2 {
+                font-size: 1.5em;
+            }
+             .day-section h3 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Viaje Eslovenia y Croacia 2024</h1>
+    </header>
+
+    <div class="container">
+        <div class="timeline">
+            <a href="#dia1">Día 1</a>
+            <a href="#dia2">Día 2</a>
+            <a href="#dia3">Día 3</a>
+            <a href="#dia4">Día 4</a>
+            <a href="#dia5">Día 5</a>
+            <a href="#dia6">Día 6</a>
+            <a href="#dia7">Día 7</a>
+            <a href="#dia8">Día 8</a>
+            <a href="#dia9">Día 9</a>
+        </div>
+
+        <!-- Día 1 -->
+        <div id="dia1" class="day-section">
+            <h2>Día 1: Jueves, 31 de julio - Llegada y cuevas mágicas del Señor de los Anillos 🧙‍♂️✨</h2>
+            <p>La aventura arranca con la llegada a Venecia y un viaje directo a las maravillas subterráneas de Eslovenia.</p>
+            <ul>
+                <li><strong>11:15:</strong> Llegada al Aeropuerto Marco Polo de Venecia (VCE). 🛬</li>
+                <li><strong>11:15 - 12:45:</strong> Recogida de coches de alquiler. ¡Recordar comprar online las viñetas de peaje para Eslovenia! 🚗🎟️</li>
+                <li><strong>12:45 - 14:25:</strong> Conducción a las Cuevas de Škocjan.
+                    <div class="route-details">Ruta: Aeropuerto de Venecia → Cuevas de Škocjan (Aprox. 1h 40m)</div>
+                </li>
+                 <li><strong>14:45 - 15:30:</strong> Comida de picnic que traemos de casa en la zona de mesas. 🥪🥤</li>
+                <li><strong>15:30 - 18:30:</strong> Tour por las Cuevas de Škocjan. ¡Un espectáculo de la naturaleza! 🚶‍♀️🔦</li>
+                <li><strong>18:30 - 19:30:</strong> Viaje al hotel en Mengeš.</li>
+            </ul>
+             <div class="route-details">Ruta del Día: Aeropuerto VCE → Cuevas de Škocjan → Hotel Harmonija</div>
+             <a href="https://www.google.com/maps/dir/Aeropuerto+Marco+Polo+de+Venecia,+Viale+Galileo+Galilei,+30,+Tessera,+VE,+Italia/Cuevas+de+Škocjan,+Škocjan,+Eslovenia/Hotel+Harmonija,+Mengeš,+Eslovenia/" target="_blank" class="google-maps-link">Ver Ruta del Día 1 en Google Maps</a>
+            <div class="accommodation">
+                <strong>Alojamiento:</strong> Hotel Harmonija, Mengeš. 🛌
+            </div>
+            <div class="food">
+                <strong>Cena:</strong> En el hotel para reponer fuerzas tras un día intenso.
+            </div>
+        </div>
+
+        <!-- Día 2 -->
+        <div id="dia2" class="day-section">
+            <h2>Día 2: Viernes, 1 de agosto - Lagos alpinos de ensueño 🏞️🛶</h2>
+            <p>Un día dedicado a los dos lagos más famosos de Eslovenia, con paisajes que parecen sacados de un cuento de hadas.</p>
+            <h3>Mañana (08:30 - 13:00): El icónico Lago Bled</h3>
+            <ul>
+                <li>Salida del hotel, comprando un picnic por el camino.</li>
+                <li><strong>10:00:</strong> Llegada a Bled. Se recomienda aparcar en el parking del Castillo de Bled.</li>
+                <li><strong>10:00 - 12:00:</strong> Visita al Castillo de Bled 👑 para disfrutar de sus vistas espectaculares.</li>
+                <li><strong>12:00 - 13:00:</strong> Tiempo libre. Paseo por la orilla o viaje opcional en "Pletna" a la isla. 🛶</li>
+            </ul>
+            <h3>Tarde (13:00 - 19:30): El sereno Lago Bohinj</h3>
+             <ul>
+                <li><strong>13:00 - 14:00:</strong> Corto trayecto en coche hasta el Lago Bohinj.</li>
+                <li><strong>14:00 - 15:00:</strong> Comida de picnic a orillas del lago. 🌳</li>
+                <li><strong>15:00 - 18:30:</strong> Tarde de actividades a elegir.</li>
+            </ul>
+            <div class="highlight">
+                <strong>Grupo 1 (Activos) 🚶‍♂️:</strong> Caminata a la Cascada Savica (1h aprox. i/v desde el parking).
+            </div>
+             <div class="highlight">
+                <strong>Grupo 2 (Relax) 🛀:</strong> Baño en las tranquilas aguas del lago, kayak o simplemente relajarse al sol.
+            </div>
+            <h3>Noche:</h3>
+            <ul>
+                <li><strong>19:30:</strong> Regreso al hotel, con una parada para comprar provisiones para la cena.</li>
+            </ul>
+            <div class="accommodation">
+                <strong>Alojamiento:</strong> Hotel Harmonija, Mengeš. 🛌
+            </div>
+            <div class="route-details">Ruta del Día: Hotel → Lago Bled → Lago Bohinj → Hotel</div>
+            <a href="https://www.google.com/maps/dir/Hotel+Harmonija,+Mengeš,+Eslovenia/Lago+de+Bled,+Bled,+Eslovenia/Lago+de+Bohinj,+Eslovenia/Hotel+Harmonija,+Mengeš,+Eslovenia/" target="_blank" class="google-maps-link">Ver Ruta del Día 2 en Google Maps</a>
+        </div>
+
+        <!-- Día 3 -->
+        <div id="dia3" class="day-section">
+            <h2>Día 3: Sábado, 2 de agosto - Encanto medieval y capital vibrante 🏰🏙️</h2>
+            <p>Combinamos la visita a un pueblo histórico con la energía y belleza de la capital eslovena, Ljubljana.</p>
+            <h3>Mañana (09:30 - 12:30): Joya Medieval</h3>
+            <ul>
+                <li><strong>09:30:</strong> Salida del hotel.</li>
+                <li><strong>10:00 - 12:00:</strong> Explorar el pueblo medieval de Škofja Loka, su castillo y sus pintorescas calles.</li>
+                <li><strong>12:00 - 12:30:</strong> Traslado al cercano Lago Zbilje.</li>
+            </ul>
+            <div class="food">
+                <strong>Almuerzo:</strong> Picnic relajado en Zbiljsko jezero, un lago ideal con patos, sombra y bancos.
+            </div>
+            <h3>Tarde/Noche (14:00 en adelante): Ljubljana</h3>
+            <ul>
+                <li>Traslado a Ljubljana.</li>
+                <li><strong>Actividades:</strong> Explorar el Puente Triple, el Puente de los Dragones 🐉, y subir al Castillo de Ljubljana en funicular.</li>
+                <li>Pasear por la animada orilla del río Ljubljanica.</li>
+            </ul>
+            <div class="food">
+                <strong>Comida callejera:</strong> No se pierdan un Burek en "Burek Olimpija".
+                <strong>Cena:</strong> Pizzería en Ljubljana o de vuelta en el hotel.
+            </div>
+            <div class="accommodation">
+                <strong>Alojamiento:</strong> Hotel Harmonija, Mengeš. 🛌
+            </div>
+             <div class="route-details">Ruta del Día: Hotel → Škofja Loka → Lago Zbilje → Ljubljana → Hotel</div>
+            <a href="https://www.google.com/maps/dir/Hotel+Harmonija,+Mengeš,+Eslovenia/Škofja+Loka,+Eslovenia/Zbiljsko+jezero,+Eslovenia/Ljubljana+Castle,+Ljubljana,+Eslovenia/Hotel+Harmonija,+Mengeš,+Eslovenia/" target="_blank" class="google-maps-link">Ver Ruta del Día 3 en Google Maps</a>
+        </div>
+
+        <!-- Día 4 -->
+        <div id="dia4" class="day-section">
+            <h2>Día 4: Domingo, 3 de agosto - Maravilla natural y rumbo a la costa croata 🏞️🇭🇷</h2>
+            <p>Día de transición largo pero espectacular, desde Eslovenia hasta el paraíso acuático de Plitvice y la costa dálmata.</p>
+            <div class="advice">
+                <strong>Consejo Clave:</strong> ¡La salida temprana es fundamental para aprovechar el día en Plitvice!
+            </div>
+            <ul>
+                <li><strong>08:30:</strong> Salida del hotel. Parada para comprar picnic. 🥪🍎</li>
+                <li><strong>13:00 - 13:30:</strong> Llegada al Parque Nacional de los Lagos de Plitvice (Entrada 1).</li>
+                <li><strong>13:30 - 18:00:</strong> Visita al parque. Se recomienda seguir una ruta como la 'C' para una experiencia completa. 🚶‍♀️💧</li>
+                <li><strong>18:00:</strong> Salida de Plitvice hacia Primošten.</li>
+                <li><strong>19:30 - 20:00:</strong> Parada para comprar comida para la cena. 🛒</li>
+            </ul>
+            <div class="highlight">
+                <strong>Toque de Ensueño ✨:</strong> Intenten llegar al apartamento sobre las 20:15 para ver la puesta de sol sobre el Adriático. ¡Un chapuzón rápido puede ser la mejor bienvenida! 🌅🏊‍♀️
+            </div>
+            <div class="accommodation">
+                <strong>Alojamiento:</strong> Apartmani M&Z, Plat 25, 22202, Primošten, Croacia. 🏡
+            </div>
+            <div class="route-details">Ruta del Día: Hotel Harmonija → Lagos de Plitvice → Apartmani M&Z, Primošten</div>
+            <a href="https://www.google.com/maps/dir/Hotel+Harmonija,+Mengeš,+Eslovenia/Parque+Nacional+de+los+Lagos+de+Plitvice,+Plitvička+Jezera,+Croacia/Apartmani+M&Z,+Plat+25,+22202,+Primošten,+Croacia/" target="_blank" class="google-maps-link">Ver Ruta del Día 4 en Google Maps</a>
+        </div>
+
+        <!-- Día 5 -->
+        <div id="dia5" class="day-section">
+            <h2>Día 5: Lunes, 4 de agosto - Día de playa en Primošten y tarde a elegir ☀️🏖️</h2>
+            <p>Un merecido día de descanso y sol en una de las playas más bonitas de Croacia, con opciones para todos los gustos por la tarde.</p>
+            <h3>Mañana (09:30 - 14:00): Relax en Primošten</h3>
+            <ul>
+                <li>Disfruten de la Playa Mala Raduča, con su arena fina y aguas turquesas. 🌊</li>
+                <li>Actividad suave: Paseo por las callejuelas del casco antiguo hasta la iglesia de San Jorge. 🚶‍♀️⛪</li>
+                <li>Tiempo para juegos, snorkel 🐠 o simplemente no hacer nada.</li>
+            </ul>
+             <h3>Tarde (Desde las 15:30): Tarde a Elegir</h3>
+             <div class="highlight">
+                <strong>Opción 1: Šibenik Histórico 🏰.</strong> A 30 min en coche, visiten la Catedral de Santiago y la Fortaleza de San Miguel, terminando con un helado en el paseo marítimo.
+            </div>
+             <div class="highlight">
+                <strong>Opción 2: Atardecer en Primošten 🌅.</strong> Sin coger el coche, den un paseo por la ruta circular de la península. Las vistas al atardecer desde la Iglesia de San Jorge son inolvidables y muy accesibles.
+            </div>
+            <div class="accommodation">
+                <strong>Alojamiento:</strong> Apartmani M&Z, Primošten. 🛌
+            </div>
+            <div class="food">
+                <strong>Comida y Cena:</strong> Aprovechando los apartamentos, se puede comer y cenar en "casa" después de comprar en un supermercado local. 🛒
+            </div>
+             <a href="https://www.google.com/maps/place/Apartmani+M&Z/@43.585834,15.923838,15z" target="_blank" class="google-maps-link">Ver Ubicación en Google Maps</a>
+        </div>
+
+        <!-- Día 6 -->
+        <div id="dia6" class="day-section">
+            <h2>Día 6: Martes, 5 de agosto - Joyas dálmatas: Trogir y Split 💎🏛️</h2>
+            <p>Día de inmersión cultural visitando dos ciudades declaradas Patrimonio de la Humanidad por la UNESCO.</p>
+             <div class="advice">
+                <strong>Consejo de Tráfico:</strong> El tráfico cerca de Split puede ser intenso en verano. ¡Paciencia! 🚦
+            </div>
+            <ul>
+                <li><strong>09:30:</strong> Salida de Primošten.</li>
+                <li><strong>10:30 - 13:00:</strong> Visita a Trogir, explorando su encantador casco antiguo en una pequeña isla.</li>
+                <li><strong>13:00 - 13:45:</strong> Traslado a Split.</li>
+            </ul>
+            <div class="food">
+                <strong>Almuerzo:</strong> Para algo rápido y barato en Trogir, "Fast Food Obelix" es una opción popular.
+            </div>
+            <h3>Tarde/Noche: Explorando Split</h3>
+            <ul>
+                <li>Visita al impresionante Palacio de Diocleciano. 🏛️</li>
+                <li>Paseo por la animada Riva (paseo marítimo). 🌊</li>
+                <li>Subida opcional a la colina de Marjan para unas vistas panorámicas.</li>
+            </ul>
+            <div class="accommodation">
+                <strong>Alojamiento:</strong> Apartmani M&Z, Primošten. 🛌
+            </div>
+             <div class="route-details">Ruta del Día: Primošten → Trogir → Split → Primošten</div>
+            <a href="https://www.google.com/maps/dir/Apartmani+M&Z,+Primošten,+Croacia/Trogir,+Croacia/Palacio+de+Diocleciano,+Split,+Croacia/Apartmani+M&Z,+Primošten,+Croacia/" target="_blank" class="google-maps-link">Ver Ruta del Día 6 en Google Maps</a>
+        </div>
+        
+        <!-- Día 7 -->
+        <div id="dia7" class="day-section">
+            <h2>Día 7: Miércoles, 6 de agosto - Saludo al Sol en Zadar y rumbo al norte ☀️🎶</h2>
+            <p>Nos despedimos de la costa dálmata con una parada en la innovadora Zadar antes de dirigirnos hacia el norte de Croacia.</p>
+            <ul>
+                <li><strong>09:00:</strong> Check-out y salida de Primošten.</li>
+                <li><strong>10:00 - 13:30:</strong> Visita a Zadar.</li>
+            </ul>
+            <div class="highlight">
+                <strong>Toque de Ensueño ✨:</strong> No se pierdan el Órgano de Mar, que crea música con las olas, y el Saludo al Sol, una instalación artística solar. ¡Son experiencias únicas!
+            </div>
+            <ul>
+                <li>Exploren también el Foro Romano y la Iglesia de San Donato.</li>
+                 <li><strong>13:30 - 14:00:</strong> Comida rápida en Zadar.</li>
+                <li><strong>14:00:</strong> Salida hacia Rijeka.</li>
+                <li><strong>18:00 - 18:30:</strong> Llegada y check-in en el hostel en Rijeka.</li>
+            </ul>
+            <h3>Tarde/Noche:</h3>
+            <ul>
+                <li>Paseo por el barrio de Trsat para ver su castillo y disfrutar de las vistas nocturnas de Rijeka. 🌃</li>
+            </ul>
+            <div class="accommodation">
+                <strong>Alojamiento:</strong> Hostel TRSAT, Rijeka. 🛌
+            </div>
+             <div class="route-details">Ruta del Día: Primošten → Zadar → Rijeka</div>
+            <a href="https://www.google.com/maps/dir/Apartmani+M&Z,+Primošten,+Croacia/Órgano+de+mar,+Zadar,+Croacia/Hostel+TRSAT,+Rijeka,+Croacia/" target="_blank" class="google-maps-link">Ver Ruta del Día 7 en Google Maps</a>
+        </div>
+        
+        <!-- Día 8 -->
+        <div id="dia8" class="day-section">
+            <h2>Día 8: Jueves, 7 de agosto - De Rijeka a la serenísima Venecia! 🌉🇮🇹</h2>
+            <p>El viaje circular nos lleva de vuelta a Italia, culminando con una tarde mágica en la inconfundible Venecia.</p>
+            <ul>
+                 <li><strong>Mañana:</strong> Desayuno tranquilo y últimas vistas desde Trsat.</li>
+                <li><strong>10:00:</strong> Salida de Rijeka.</li>
+                <li><strong>13:15 - 13:45:</strong> Llegada al hotel en Mogliano Veneto. Check-in, dejar equipaje y comer algo rápido.</li>
+                 <li><strong>14:00 - 14:30:</strong> Dejar los coches en un parking de Venecia (Tronchetto o Piazzale Roma).</li>
+            </ul>
+             <h3>Tarde/Noche: Magia en Venecia</h3>
+             <ul>
+                <li>Explorar la Plaza San Marcos 🕊️ y el Puente de Rialto.</li>
+                <li>Consideren un paseo en Vaporetto para ver la ciudad desde el agua. 🚤</li>
+                <li>La mejor actividad: perderse por sus laberínticos canales y callejuelas.</li>
+             </ul>
+            <div class="food">
+                <strong>Cena:</strong> ¡Una merecida pizza en Venecia para celebrar el viaje! 🍕
+            </div>
+            <div class="accommodation">
+                <strong>Alojamiento:</strong> Hotel Duca D'Aosta, Mogliano Veneto. 🛌
+            </div>
+            <div class="route-details">Ruta del Día: Rijeka → Mogliano Veneto → Venecia (Parking)</div>
+            <a href="https://www.google.com/maps/dir/Hostel+TRSAT,+Rijeka,+Croacia/Hotel+Duca+D'Aosta,+Mogliano+Veneto,+TV,+Italia/Tronchetto+Parking,+Venecia,+VE,+Italia/" target="_blank" class="google-maps-link">Ver Ruta del Día 8 en Google Maps</a>
+        </div>
+        
+        <!-- Día 9 -->
+        <div id="dia9" class="day-section">
+            <h2>Día 9: Viernes, 8 de agosto - Despedida con sabor a Treviso 👋🍇</h2>
+            <p>Un final de viaje relajado, explorando la encantadora y menos concurrida Treviso antes de dirigirnos al aeropuerto.</p>
+            <ul>
+                <li><strong>Mañana:</strong> Desayuno y check-out del hotel.</li>
+                <li><strong>09:30 - 10:00:</strong> Corto trayecto en coche a Treviso.</li>
+                <li><strong>10:00 - 14:30:</strong> Paseo por el centro de Treviso, conocido como "la pequeña Venecia" por sus canales.</li>
+            </ul>
+            <div class="food">
+                <strong>Almuerzo:</strong> Comida ligera en uno de los muchos cafés y restaurantes con encanto de Treviso. 🥗 
+            </div>
+            <h3>Tarde: Regreso</h3>
+            <ul>
+                <li><strong>15:15:</strong> Salida hacia el Aeropuerto Marco Polo (VCE). 🛫</li>
+                <li><strong>15:55 - 16:30:</strong> Devolución de los coches de alquiler.</li>
+                <li><strong>16:30 en adelante:</strong> Tiempo para facturación, seguridad y embarque.</li>
+                <li><strong>19:50:</strong> Vuelo de regreso. ¡Fin de la aventura! 👋</li>
+            </ul>
+             <div class="route-details">Ruta del Día: Hotel → Treviso → Aeropuerto VCE</div>
+            <a href="https://www.google.com/maps/dir/Hotel+Duca+D'Aosta,+Mogliano+Veneto,+TV,+Italia/Treviso,+TV,+Italia/Aeropuerto+Marco+Polo+de+Venecia,+Tessera,+VE,+Italia/" target="_blank" class="google-maps-link">Ver Ruta del Día 9 en Google Maps</a>
+        </div>
+    </div>
+    <script>
+        // Smooth scroll for timeline links
+        document.querySelectorAll('.timeline a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Optional: Add active class to clicked link
+                document.querySelectorAll('.timeline a').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
