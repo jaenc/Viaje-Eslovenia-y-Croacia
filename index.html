@@ -719,7 +719,7 @@
         </div>
 
     </div>
-               <script>
+                  <script>
         // Smooth scroll for timeline links
         document.querySelectorAll('.timeline a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -778,8 +778,8 @@
                         throw new Error("API Key no configurada. Por favor, edita el código para añadir tu clave de la API de Gemini.");
                     }
                     
-                    // CORRECCIÓN FINAL: Usamos el nombre de modelo correcto 'gemini-pro'.
-                    const model = 'gemini-pro'; 
+                    // CORRECCIÓN DEFINITIVA: Usamos el nombre del modelo que SÍ está disponible para tu clave.
+                    const model = 'gemini-2.5-flash'; 
                     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
                     const response = await fetch(apiUrl, {
