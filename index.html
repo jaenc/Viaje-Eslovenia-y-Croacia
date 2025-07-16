@@ -719,7 +719,7 @@
         </div>
 
     </div>
-    <script>
+        <script>
         // Smooth scroll for timeline links
         document.querySelectorAll('.timeline a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -727,7 +727,6 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
-                // Optional: Add active class to clicked link
                 document.querySelectorAll('.timeline a').forEach(link => link.classList.remove('active'));
                 this.classList.add('active');
             });
@@ -778,8 +777,10 @@
                     if (apiKey === "AQUÍ_VA_TU_API_KEY_DE_GEMINI" || apiKey === "") {
                         throw new Error("API Key no configurada. Por favor, edita el código para añadir tu clave de la API de Gemini.");
                     }
-
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+                    
+                    // --- PLAN B: Intenta cambiar 'gemini-1.5-flash' por 'gemini-1.0-pro' si sigue fallando ---
+                    const model = 'gemini-1.5-flash'; 
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
                     const response = await fetch(apiUrl, {
                         method: 'POST',
@@ -791,39 +792,32 @@
                         })
                     });
 
-                    if (!response.ok) {
-                        const errorData = await response.json();
-                        throw new Error(`Error de la API: ${response.status}. Detalles: ${JSON.stringify(errorData)}`);
-                    }
-
                     const result = await response.json();
+                    
+                    // Mostramos la respuesta COMPLETA en la consola para depuración
+                    console.log('Respuesta completa de la API:', JSON.stringify(result, null, 2));
 
-                    // --- CÓDIGO CORREGIDO ---
-                    // Esta es la parte que he arreglado. Ahora lee la respuesta correctamente.
                     if (result.candidates && result.candidates[0] && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts[0]) {
                         
                         let text = result.candidates[0].content.parts[0].text;
-                        
-                        // Limpieza por si acaso, para quitar los ` y ```
                         const cleanedText = text.replace(/^```(html)?\s*/, '').replace(/```$/, '').trim();
 
                         resultsDiv.innerHTML = `<p><strong>Delicias de ${location}:</strong></p>${cleanedText}`;
                         resultsDiv.style.display = 'block';
 
                     } else {
-                        // Si la respuesta no viene como esperamos, mostramos este error.
-                        let errorMessage = '<p>Lo siento, no pude obtener sugerencias de comida en este momento.</p>';
-                        if (result.promptFeedback && result.promptFeedback.blockReason) {
-                             errorMessage += `<p>Razón del bloqueo: ${result.promptFeedback.blockReason}</p>`;
-                        } else {
-                             errorMessage += '<p>La respuesta de la IA no tuvo el formato esperado.</p>';
-                        }
-                        resultsDiv.innerHTML = errorMessage;
+                        // SI FALLA, MOSTRAMOS EL ERROR TÉCNICO COMPLETO EN LA PANTALLA
+                        let errorHtml = '<p style="color: #c0392b;"><strong>La respuesta de la IA no tuvo el formato esperado.</strong></p>';
+                        errorHtml += '<p>Esta es la respuesta técnica recibida del servidor:</p>';
+                        // Usamos <pre> para mostrar el texto técnico bien formateado
+                        errorHtml += '<pre style="background-color: #eee; padding: 10px; border-radius: 5px; word-wrap: break-word; white-space: pre-wrap;">' + JSON.stringify(result, null, 2) + '</pre>';
+                        resultsDiv.innerHTML = errorHtml;
                         resultsDiv.style.display = 'block';
                     }
                 } catch (error) {
+                    // SI HAY UN ERROR DE RED, TAMBIÉN LO MOSTRAMOS
                     console.error("Error al conectar con la API de Gemini:", error);
-                    resultsDiv.innerHTML = `<p style="color: #c0392b;"><strong>¡Error de conexión!</strong></p><p>Hubo un problema al conectar con el servicio de sugerencias. Detalle: ${error.message}</p><p>Asegúrate de tener conexión a internet y de haber introducido una API Key válida y correcta en el código.</p>`;
+                    resultsDiv.innerHTML = `<p style="color: #c0392b;"><strong>¡Error de conexión!</strong></p><p>Detalle: ${error.message}</p>`;
                     resultsDiv.style.display = 'block';
                 } finally {
                     spinner.style.display = 'none';
