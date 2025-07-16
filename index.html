@@ -446,7 +446,7 @@
             <a href="#dia9">DÍA 9</a>
         </div>
 
-        <!-- El resto del contenido de los días (Día 1 a Día 9) permanece exactamente igual que en tu código original -->
+        <!-- El resto del contenido de los días (Día 1 a Día 9) permanece exactamente igual -->
         <!-- Día 1 -->
         <div id="dia1" class="day-section">
             <h2>Día 1: Jueves, 31 de julio - Llegada y cuevas mágicas del Señor de los Anillos 🧙‍♂️✨</h2>
@@ -736,7 +736,6 @@
         // Add event listeners for the new scroll-to-top buttons
         document.querySelectorAll('.scroll-to-top-btn').forEach(button => {
             button.addEventListener('click', function () {
-                // Scroll to the very top of the body
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
@@ -769,14 +768,13 @@
                 resultsDiv.innerHTML = '';
                 spinner.style.display = 'inline-block';
 
-                const prompt = `Sugiere 3 platos o experiencias culinarias locales típicas de ${location}. Sé conciso y menciona el nombre del plato y una breve descripción. Formatea la respuesta en HTML simple, usando <strong> para los nombres de los platos y <br> para separar los platos.`;
+                // Petición a la IA mejorada para evitar que incluya caracteres extraños.
+                const prompt = `Sugiere 3 platos o experiencias culinarias locales típicas de ${location}. Sé conciso y menciona el nombre del plato y una breve descripción. Formatea la respuesta usando etiquetas HTML como <p> para cada plato y <strong> para el nombre del plato. No incluyas los marcadores de bloque de código de Markdown (\`\`\`html y \`\`\`) en tu respuesta. La respuesta debe ser directamente el código HTML.`;
 
                 try {
                     // --- ¡MUY IMPORTANTE! ---
-                    // Debes generar tu propia API Key gratuita desde Google AI Studio (antes MakerSuite)
-                    // y pegarla aquí. Sin una clave, esta función mostrará un error.
-                    // Visita aistudio.google.com para obtener tu clave de API.
-                    const apiKey = "AIzaSyA3Vuobu5EpsEy8ZQ8n6zb6jhkTbwlXhaQ";
+                    // Pega aquí tu NUEVA clave de API que has generado.
+                    const apiKey = "AIzaSyDB30QJutLOiVI70oPyk4iYIWKeqzKylx8"; 
                     
                     if (apiKey === "AQUÍ_VA_TU_API_KEY_DE_GEMINI" || apiKey === "") {
                         throw new Error("API Key no configurada. Por favor, edita el código para añadir tu clave de la API de Gemini.");
@@ -800,14 +798,18 @@
                     }
 
                     const result = await response.json();
+                    
+                    if (result.candidates && result.candidates.content && result.candidates.content.parts) {
+                        let text = result.candidates.content.parts.text;
+                        
+                        // LIMPIEZA AUTOMÁTICA: Eliminamos los marcadores de Markdown si aparecen.
+                        const cleanedText = text.replace(/^```html\s*/, '').replace(/```$/, '').trim();
 
-                    if (result.candidates && result.candidates[0].content && result.candidates[0].content.parts[0]) {
-                        const text = result.candidates[0].content.parts[0].text;
-                        resultsDiv.innerHTML = `<p><strong>Delicias de ${location}:</strong></p>${text}`;
+                        resultsDiv.innerHTML = `<p><strong>Delicias de ${location}:</strong></p>${cleanedText}`;
                         resultsDiv.style.display = 'block';
                     } else {
                         let errorMessage = '<p>Lo siento, no pude obtener sugerencias de comida en este momento.</p>';
-                        if (result.promptFeedback) {
+                        if (result.promptFeedback && result.promptFeedback.blockReason) {
                              errorMessage += `<p>Razón: ${result.promptFeedback.blockReason}</p>`;
                         } else {
                              errorMessage += '<p>La respuesta de la IA no tuvo el formato esperado.</p>';
