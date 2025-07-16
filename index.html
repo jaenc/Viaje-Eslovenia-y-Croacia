@@ -779,7 +779,7 @@
                     }
                     
                     // CAMBIO REALIZADO: Usamos el modelo 'pro' que es más estable.
-                    const model = 'gemini-1.0-pro'; 
+                    const model = 'gemini-pro'; 
                     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
                     const response = await fetch(apiUrl, {
