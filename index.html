@@ -58,7 +58,7 @@
         }
         .timeline {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap; /* Prevent wrapping on smaller screens */
             justify-content: center;
             gap: 18px; /* Increased gap */
             background: #ecf0f1; /* Light grey background for timeline */
@@ -66,6 +66,12 @@
             margin-bottom: 40px; /* More space below timeline */
             border-radius: 10px; /* Rounded corners */
             box-shadow: inset 0 2px 5px rgba(0,0,0,0.05); /* Inner shadow for depth */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+        }
+        .timeline::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome, Safari, Edge */
         }
         .timeline a {
             color: #ffffff;
@@ -80,6 +86,7 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* More pronounced shadow */
             text-transform: uppercase;
             letter-spacing: 0.8px; /* Increased letter spacing */
+            flex-shrink: 0; /* Prevent items from shrinking */
         }
         .timeline a:hover, .timeline a.active {
             background-image: linear-gradient(to right, #2980b9, #226f9e); /* Darker gradient on hover/active */
@@ -337,13 +344,14 @@
                 -webkit-overflow-scrolling: touch;
                 scrollbar-width: none;
                 padding: 15px;
+                gap: 10px; /* Reduced gap for mobile timeline */
             }
             .timeline::-webkit-scrollbar {
                 display: none;
             }
             .timeline a {
-                padding: 10px 18px;
-                font-size: 0.95em;
+                padding: 8px 14px; /* Further reduced padding for mobile buttons */
+                font-size: 0.85em; /* Smaller font for mobile buttons */
                 flex-shrink: 0;
                 min-width: unset;
             }
@@ -576,7 +584,7 @@
                         <strong>🏰 Opción 1: Šibenik histórico + helado en la Riva</strong><br>Salida: 15:30 (30 min en coche) 🚗<br>Visita a:<br>Catedral de Santiago ⛪<br>Fortaleza de San Miguel (opcional) 🛡️<br>Paseo por el casco antiguo y paseo marítimo 🚶‍♀️🌊<br>🍦 Helado o refresco en las terrazas frente al mar. 🍹<br>Regreso a Primošten: 19:30 (cena en apartamentos) 🏡
                     </div>
                     <div class="highlight">
-                        <strong>🌅 Opción 2: Atardecer en la península de Primošten</strong><br>Si no queremos coger coche, nos podemos dar un paseo por la península al atardecer: 🚶‍♂️🌇<br>Ruta circular junto al mar. 🚶‍♀️<br>Paradas para fotos 📸, bancos, pinos y miradores. 🌲🔭<br>Iglesia San Jorge, vista panorámica, atardecer. ⛪🌅<br>Cena en los apartamentos 🍽️<br>👉 Muy accesible, sin esfuerzo, precioso al atardecer. 😍
+                        <strong>🌅 Opción 2: Atardecer en la península de Primošten</strong><br>Si no queremos coger coche, nos podemos dar un paseo por la península al atardecer: 🚶‍♂️🌇<br>Ruta circular junto al mar (sendero pavimentado). 🚶‍♀️<br>Paradas para fotos 📸, bancos, pinos y miradores. 🌲🔭<br>Iglesia San Jorge, vista panorámica, atardecer. ⛪🌅<br>Cena en los apartamentos 🍽️<br>👉 Muy accesible, sin esfuerzo, precioso al atardecer. 😍
                     </div>
                 </li>
             </ul>
@@ -599,7 +607,7 @@
             <h3>Horarios Sugeridos:</h3>
             <ul>
                 <li><strong>09:30:</strong> Salida de Primošten. 🛣️</li>
-                <li><strong>10:30 - 13:00:</strong> Visita a Trogir (UNESCO). Visitamos su encantador casco antiguo isleño 🏘️, posible sitio de comida barata (Fast Food Obelix) 🍔🍟</li>
+                <li><strong>10:30 - 13:00::</strong> Visita a Trogir (UNESCO). Visitamos su encantador casco antiguo isleño 🏘️, posible sitio de comida barata (Fast Food Obelix) 🍔🍟</li>
                 <li><strong>13:00 - 13:45:</strong> Traslado a Split. 🚙</li>
                 <li><strong>13:45 - Tarde/Noche:</strong> Explorar Split. 🚶‍♀️<br>Posible comida al llegar si no hemos comido en Trogir 🍽️<br>Palacio de Diocleciano (UNESCO). 🏛️<br>Paseo marítimo (Riva). 🌊<br>Colina Marjan para vistas. 🏞️<br>Comprar cena!!! 🛒</li>
                 <li><strong>20:30 - 21:00:</strong> Regreso a Primošten. 🏡</li>
@@ -778,6 +786,12 @@
                         body: JSON.stringify(payload)
                     });
 
+                    // Check for HTTP errors
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(`HTTP error! status: ${response.status}, details: ${JSON.stringify(errorData)}`);
+                    }
+
                     const result = await response.json();
 
                     if (result.candidates && result.candidates.length > 0 &&
@@ -787,12 +801,12 @@
                         resultsDiv.innerHTML = `<p><strong>Delicias de ${location}:</strong></p>${text.split('\n').map(item => `<p>${item}</p>`).join('')}`;
                         resultsDiv.style.display = 'block'; // Show results
                     } else {
-                        resultsDiv.innerHTML = '<p>Lo siento, no pude obtener sugerencias de comida en este momento. Inténtalo de nuevo más tarde.</p>';
+                        resultsDiv.innerHTML = '<p>Lo siento, no pude obtener sugerencias de comida en este momento. La respuesta de la IA no fue la esperada.</p>';
                         resultsDiv.style.display = 'block';
                     }
                 } catch (error) {
                     console.error("Error fetching Gemini API:", error);
-                    resultsDiv.innerHTML = '<p>Hubo un error al conectar con el servicio de sugerencias. Por favor, inténtalo de nuevo.</p>';
+                    resultsDiv.innerHTML = `<p>Hubo un error al conectar con el servicio de sugerencias. Por favor, inténtalo de nuevo. Detalle: ${error.message}</p>`;
                     resultsDiv.style.display = 'block';
                 } finally {
                     spinner.style.display = 'none'; // Hide spinner
