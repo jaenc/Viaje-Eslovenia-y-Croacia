@@ -3,429 +3,714 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía de Viaje: Eslovenia y Croacia 2024</title>
+    <title>Guía de Viaje: Eslovenia y Croacia 2025</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #343a40;
+            background-color: #f4f6f9; /* Light, slightly warm grey background */
+            color: #2c3e50; /* Dark grey-blue for main text */
         }
         .container {
             width: 85%;
             max-width: 1200px;
-            margin: 20px auto;
+            margin: 25px auto; /* Increased margin for more breathing room */
             overflow: hidden;
-            padding: 25px;
+            padding: 30px; /* Increased padding */
             background-color: #ffffff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08); /* Softer, larger shadow */
+            border-radius: 12px; /* More rounded corners */
         }
         header {
-            background: #007bff; /* Azul primario */
+            background: linear-gradient(to right, #3498db, #2980b9); /* Vibrant blue gradient */
             color: #ffffff;
-            padding: 1.5rem 0;
+            padding: 2.5rem 0; /* More generous padding */
             text-align: center;
-            margin-bottom: 25px;
-            border-radius: 8px 8px 0 0;
+            margin-bottom: 35px; /* More space below header */
+            border-radius: 12px 12px 0 0; /* Match container border-radius */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* Subtle shadow for header */
         }
         header h1 {
             margin: 0;
-            font-size: 2.2em;
-            font-weight: 600;
+            font-size: 2.8em; /* Larger title */
+            font-weight: 700; /* Bolder font */
+            letter-spacing: 1px; /* Slight letter spacing */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* Subtle text shadow */
+        }
+        .travel-quote {
+            font-size: 1.1em; /* Slightly larger quote */
+            font-style: italic;
+            text-align: right; /* Right justified */
+            max-width: 800px; /* Limit width for readability */
+            margin: 15px auto 0 auto; /* Center the quote block, add top margin */
+            padding-right: 30px; /* Padding from the right edge of the container */
+            padding-left: 30px; /* Ensure it doesn't stick to the left edge either */
+            color: rgba(255,255,255,0.9); /* Slightly muted white for quote */
+        }
+        .travel-quote .author {
+            display: block; /* Ensure author is on a new line */
+            margin-top: 8px;
+            font-weight: 500; /* Medium font weight */
+            font-style: normal; /* Remove italic from author */
+            color: rgba(255,255,255,0.8);
         }
         .timeline {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
-            background: #e9ecef;
-            padding: 15px;
-            margin-bottom: 35px;
-            border-radius: 6px;
+            gap: 18px; /* Increased gap */
+            background: #ecf0f1; /* Light grey background for timeline */
+            padding: 25px; /* Increased padding */
+            margin-bottom: 40px; /* More space below timeline */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05); /* Inner shadow for depth */
         }
         .timeline a {
-            color: #007bff;
-            background-color: #ffffff;
-            border: 1px solid #007bff;
+            color: #ffffff;
+            background-image: linear-gradient(to right, #3498db, #2980b9); /* Blue gradient */
+            border: none;
             text-decoration: none;
-            padding: 10px 18px;
-            border-radius: 20px;
-            font-weight: 500;
+            padding: 14px 28px; /* More padding for larger buttons */
+            border-radius: 30px; /* Pill shape */
+            font-weight: 600;
+            font-size: 1.1em; /* Slightly larger font */
             transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* More pronounced shadow */
+            text-transform: uppercase;
+            letter-spacing: 0.8px; /* Increased letter spacing */
         }
         .timeline a:hover, .timeline a.active {
-            background-color: #007bff;
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-image: linear-gradient(to right, #2980b9, #226f9e); /* Darker gradient on hover/active */
+            transform: translateY(-4px); /* More pronounced lift */
+            box-shadow: 0 8px 18px rgba(0,0,0,0.35); /* Larger shadow on hover */
+            cursor: pointer;
         }
         .day-section {
-            margin-bottom: 35px;
-            padding: 25px;
-            background-color: #fdfdff; /* Un blanco ligeramente diferente */
-            border-left: 6px solid #007bff;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 45px; /* More space between sections */
+            padding: 30px; /* Increased padding */
+            background-color: #ffffff;
+            border-left: 8px solid #3498db; /* Primary blue left border */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 3px 10px rgba(0,0,0,0.07); /* Softer shadow */
+            position: relative;
         }
         .day-section h2 {
-            color: #0056b3; /* Un azul más oscuro */
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 12px;
-            font-size: 1.8em;
+            color: #2c3e50; /* Dark grey-blue for headings */
+            border-bottom: 2px solid #3498db; /* Primary blue bottom border */
+            padding-bottom: 15px; /* More padding below border */
+            font-size: 2em; /* Larger heading */
             margin-top: 0;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
         .day-section h3 {
-            color: #343a40;
-            margin-top: 25px;
-            font-size: 1.4em;
+            color: #34495e; /* Slightly lighter dark blue for subheadings */
+            margin-top: 30px; /* More space above subheadings */
+            font-size: 1.6em; /* Larger subheading */
+            font-weight: 600;
         }
         ul {
             list-style: none;
-            padding-left: 5px;
+            padding-left: 0; /* Remove default padding */
         }
         ul li {
-            margin-bottom: 12px;
-            padding-left: 25px;
+            margin-bottom: 15px; /* More space between list items */
+            padding-left: 30px; /* Space for custom bullet */
             position: relative;
         }
         ul li::before {
-            content: "➔"; /* Flecha como marcador */
+            content: "•"; /* Custom bullet point */
             position: absolute;
             left: 0;
-            color: #007bff;
+            color: #3498db; /* Primary blue bullet */
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 1.4em; /* Larger bullet */
+            top: -2px; /* Adjust vertical alignment */
         }
         .google-maps-link {
-            display: inline-block;
-            background-color: #28a745; /* Verde para Google Maps */
-            color: white !important; /* Forzar color de texto */
-            padding: 9px 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #27ae60; /* Professional green for Google Maps */
+            color: white !important;
+            padding: 12px 25px; /* More padding */
             text-align: center;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 8px;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
+            border-radius: 8px; /* Slightly more rounded */
+            margin-top: 15px; /* More space above link */
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Subtle shadow */
         }
         .google-maps-link:hover {
-            background-color: #218838; /* Verde más oscuro al pasar el cursor */
+            background-color: #219d55; /* Darker green on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
         }
+        .google-maps-link .emoji-hand {
+            display: inline-block;
+            margin-left: 10px; /* More space */
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-7px); } /* More pronounced bounce */
+            60% { transform: translateY(-3px); }
+        }
+
+        .scroll-to-top-btn {
+            position: absolute;
+            bottom: 25px; /* Adjusted position */
+            right: 30px; /* Adjusted position */
+            background-color: #3498db; /* Primary blue */
+            color: white;
+            padding: 12px 16px; /* Adjusted padding for better circular shape */
+            border-radius: 50%;
+            font-size: 1.6em; /* Larger emoji */
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* More pronounced shadow */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .scroll-to-top-btn:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+            transform: translateY(-4px); /* More pronounced lift */
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 4px 12px rgba(0,0,0,0.25); }
+            50% { transform: scale(1.06); box-shadow: 0 7px 15px rgba(0,0,0,0.35); } /* More pronounced pulse */
+            100% { transform: scale(1); box-shadow: 0 4px 12px rgba(0,0,0,0.25); }
+        }
+
         .accommodation, .food, .highlight, .advice {
-            margin-top: 18px;
-            padding: 15px;
-            border-radius: 6px;
-            font-size: 0.95em;
+            margin-top: 25px; /* More space above info boxes */
+            padding: 20px; /* More padding */
+            border-radius: 8px; /* Rounded corners */
+            font-size: 0.98em; /* Slightly larger font */
+            line-height: 1.5;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Subtle shadow */
         }
-        .accommodation { background-color: #e6f7ff; border-left: 4px solid #1890ff; } /* Azul claro */
-        .food { background-color: #f6ffed; border-left: 4px solid #52c41a; } /* Verde claro */
-        .highlight { background-color: #fffbe6; border-left: 4px solid #faad14; } /* Amarillo claro */
-        .advice { background-color: #e6f7ff; border-left: 4px solid #17a2b8; } /* Cian claro para consejos */
+        .accommodation { background-color: #eaf2f8; border-left: 5px solid #3498db; } /* Light blue with primary blue border */
+        .food { background-color: #e8f8f5; border-left: 5px solid #27ae60; } /* Light green with accent green border */
+        .highlight { background-color: #fef9e7; border-left: 5px solid #f39c12; } /* Light yellow with orange border */
+        .advice { background-color: #f0f4f7; border-left: 5px solid #8e44ad; } /* Light grey-blue with purple border */
 
         .accommodation strong, .food strong, .highlight strong, .advice strong {
             display: block;
-            margin-bottom: 6px;
-            font-weight: 600;
-            color: #333;
+            margin-bottom: 8px; /* More space below strong text */
+            font-weight: 700; /* Bolder */
+            color: #34495e; /* Darker text for strong */
+            font-size: 1.1em;
         }
-        .route-details { margin-top: 5px; font-style: italic; color: #555; }
+        .route-details { margin-top: 8px; font-style: italic; color: #555; }
+
+        /* New style for the moved quote */
+        .day-quote-section {
+            margin-top: 30px; /* More space from the element above */
+            padding: 25px; /* More padding */
+            background-color: #ecf0f1; /* Light grey background */
+            border-left: 5px solid #bdc3c7; /* Medium grey border */
+            border-radius: 8px;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1em; /* Slightly larger font */
+            color: #495057; /* Slightly darker text for readability */
+            box-shadow: 0 3px 10px rgba(0,0,0,0.07); /* Subtle shadow */
+        }
+        .day-quote-section .author {
+            display: block;
+            margin-top: 10px; /* More space below quote */
+            font-weight: 500; /* Medium font weight */
+            font-style: normal;
+            color: #6c757d; /* Slightly lighter color for author */
+        }
+
+        /* LLM Feature Styles - Global Section */
+        .global-llm-feature-section {
+            margin-top: 60px; /* More space from previous section */
+            padding: 40px; /* More padding */
+            background-color: #eaf2f8; /* Light blue background, matching accommodation */
+            border-radius: 12px; /* Rounded corners */
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* Softer shadow */
+        }
+        .global-llm-feature-section h3 {
+            color: #2c3e50; /* Dark grey-blue for heading */
+            font-size: 1.8em; /* Larger heading */
+            margin-bottom: 25px; /* More space below heading */
+            font-weight: 700;
+        }
+        .llm-buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px; /* Increased gap */
+            margin-bottom: 35px; /* More space below buttons */
+        }
+        .llm-feature-btn {
+            background-image: linear-gradient(to right, #e74c3c, #c0392b); /* Reddish gradient */
+            color: white;
+            border: none;
+            padding: 14px 30px; /* More padding */
+            border-radius: 30px;
+            font-size: 1.05em; /* Slightly larger font */
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.2); /* More pronounced shadow */
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px; /* More space between icon and text */
+            min-width: 220px; /* Ensure buttons have a minimum width */
+            justify-content: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .llm-feature-btn:hover {
+            background-image: linear-gradient(to right, #c0392b, #a93226); /* Darker red on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        .llm-results-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Increased gap between results boxes */
+        }
+        .llm-results {
+            padding: 20px; /* More padding */
+            background-color: #f8fbfd; /* Very light blue background for results */
+            border: 1px solid #d0e6f7; /* Lighter blue border */
+            border-radius: 10px; /* More rounded */
+            text-align: left;
+            display: none;
+            animation: fadeIn 0.6s ease-out; /* Slightly longer fade-in */
+        }
+        .llm-results p {
+            margin-bottom: 10px; /* More space between paragraphs */
+            font-size: 1em;
+            color: #34495e;
+        }
+        .llm-results strong {
+            color: #2980b9; /* Darker blue for strong text */
+            font-weight: 700;
+        }
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db; /* Primary blue spinner */
+            border-radius: 50%;
+            width: 22px; /* Slightly larger spinner */
+            height: 22px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-left: 12px; /* More space */
+            vertical-align: middle;
+            display: none;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); } /* More pronounced slide-in */
+            to { opacity: 1; transform: translateY(0); }
+        }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .container {
                 width: 95%;
-                padding: 15px;
+                padding: 20px;
+                margin: 15px auto;
             }
             .timeline {
-                justify-content: flex-start; /* Alinea los botones a la izquierda en móvil */
+                justify-content: flex-start;
                 flex-wrap: nowrap;
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
-                scrollbar-width: none; /* Firefox */
+                scrollbar-width: none;
+                padding: 15px;
             }
             .timeline::-webkit-scrollbar {
-                display: none; /* Safari and Chrome */
+                display: none;
             }
             .timeline a {
-                padding: 8px 12px;
-                font-size: 0.9em;
+                padding: 10px 18px;
+                font-size: 0.95em;
                 flex-shrink: 0;
+                min-width: unset;
             }
             header h1 {
-                font-size: 1.8em;
+                font-size: 2.2em;
+            }
+            .travel-quote {
+                font-size: 0.95em;
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+            .day-section {
+                padding: 20px;
+                margin-bottom: 30px;
             }
             .day-section h2 {
-                font-size: 1.5em;
+                font-size: 1.7em;
             }
-             .day-section h3 {
+            .day-section h3 {
+                font-size: 1.3em;
+            }
+            ul li {
+                padding-left: 25px;
+            }
+            ul li::before {
                 font-size: 1.2em;
+            }
+            .google-maps-link {
+                padding: 10px 20px;
+                font-size: 0.95em;
+            }
+            .scroll-to-top-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 10px 14px;
+                font-size: 1.4em;
+            }
+            .accommodation, .food, .highlight, .advice {
+                padding: 15px;
+                font-size: 0.9em;
+            }
+            .accommodation strong, .food strong, .highlight strong, .advice strong {
+                font-size: 1em;
+            }
+            .day-quote-section {
+                padding: 18px;
+                font-size: 1em;
+            }
+            .global-llm-feature-section {
+                padding: 25px;
+                margin-top: 40px;
+            }
+            .global-llm-feature-section h3 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+            .llm-buttons-container {
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 25px;
+            }
+            .llm-feature-btn {
+                min-width: unset;
+                width: 100%;
+                padding: 12px 20px;
+                font-size: 0.95em;
+            }
+            .llm-results {
+                padding: 15px;
+                font-size: 0.9em;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Viaje Eslovenia y Croacia 2024</h1>
+        <h1>Viaje Vividores Eslovenia y Croacia 2025</h1>
+        <p class="travel-quote">
+            <em>"Un viaje se mide mejor en amigos que en millas."</em><br>
+            <span class="author">— Tim Cahill</span>
+        </p>
     </header>
 
     <div class="container">
         <div class="timeline">
-            <a href="#dia1">Día 1</a>
-            <a href="#dia2">Día 2</a>
-            <a href="#dia3">Día 3</a>
-            <a href="#dia4">Día 4</a>
-            <a href="#dia5">Día 5</a>
-            <a href="#dia6">Día 6</a>
-            <a href="#dia7">Día 7</a>
-            <a href="#dia8">Día 8</a>
-            <a href="#dia9">Día 9</a>
+            <a href="#dia1">DÍA 1</a>
+            <a href="#dia2">DÍA 2</a>
+            <a href="#dia3">DÍA 3</a>
+            <a href="#dia4">DÍA 4</a>
+            <a href="#dia5">DÍA 5</a>
+            <a href="#dia6">DÍA 6</a>
+            <a href="#dia7">DÍA 7</a>
+            <a href="#dia8">DÍA 8</a>
+            <a href="#dia9">DÍA 9</a>
         </div>
 
         <!-- Día 1 -->
         <div id="dia1" class="day-section">
             <h2>Día 1: Jueves, 31 de julio - Llegada y cuevas mágicas del Señor de los Anillos 🧙‍♂️✨</h2>
-            <p>La aventura arranca con la llegada a Venecia y un viaje directo a las maravillas subterráneas de Eslovenia.</p>
+            <p>Comenzamos la aventura con la llegada a Venecia y un viaje directo a las maravillas subterráneas de Eslovenia.</p>
+            <p><strong>Fecha:</strong> Jueves, 31 de julio</p>
+            <p><strong>Ruta Principal:</strong> Aeropuerto Marco Polo Venecia (VCE) ✈️ -> Cuevas de Škocjan (Eslovenia) 🦇 -> Hotel Harmonija (Mengeš, Eslovenia) 🏨</p>
+            <p><strong>Distancia y Tiempo Conducción Estimado:</strong> ~260 km. Tiempo total incluyendo paradas: ~2h 45min - 3h 15min.</p>
+            <h3>Horarios:</h3>
             <ul>
-                <li><strong>11:15:</strong> Llegada al Aeropuerto Marco Polo de Venecia (VCE). 🛬</li>
-                <li><strong>11:15 - 12:45:</strong> Recogida de coches de alquiler. ¡Recordar comprar online las viñetas de peaje para Eslovenia! 🚗🎟️</li>
-                <li><strong>12:45 - 14:25:</strong> Conducción a las Cuevas de Škocjan.
-                    <div class="route-details">Ruta: Aeropuerto de Venecia → Cuevas de Škocjan (Aprox. 1h 40m)</div>
-                </li>
-                 <li><strong>14:45 - 15:30:</strong> Comida de picnic que traemos de casa en la zona de mesas. 🥪🥤</li>
-                <li><strong>15:30 - 18:30:</strong> Tour por las Cuevas de Škocjan. ¡Un espectáculo de la naturaleza! 🚶‍♀️🔦</li>
-                <li><strong>18:30 - 19:30:</strong> Viaje al hotel en Mengeš.</li>
+                <li><strong>11:15:</strong> Llegada a VCE. 🛬</li>
+                <li><strong>11:15 - 12:45:</strong> Recogida de coches de alquiler 🚗 (compramos online las viñetas de peaje para cruzar a Eslovenia 🎟️).</li>
+                <li><strong>12:45:</strong> Salida hacia Cuevas de Škocjan. 🗺️</li>
+                <li><strong>14:25 - 14:45:</strong> Llegada estimada a las Cuevas de Škocjan (considerando un trayecto de aproximadamente 1h 40min). 🏞️</li>
+                <li><strong>14:45 - 15:30:</strong> Comida en zona de mesas, la comida la llevamos desde casa 🥪 (hay que comprar bebidas en gasolinera 🥤).</li>
+                <li><strong>15:30 - 16:00:</strong> Recogida entradas (20 minutos antes) e inicio del tour por las cuevas (suelen durar unas 2-3 horas). 🚶‍♀️🔦</li>
+                <li><strong>18:30 - 19:00:</strong> Salida de Cuevas de Škocjan hacia Mengeš. 🛣️</li>
+                <li><strong>19:30 - 20:00:</strong> Llegada al Hotel Harmonija, Mengeš. Check-in y cena. 🍽️</li>
             </ul>
-             <div class="route-details">Ruta del Día: Aeropuerto VCE → Cuevas de Škocjan → Hotel Harmonija</div>
-             <a href="https://www.google.com/maps/dir/Aeropuerto+Marco+Polo+de+Venecia,+Viale+Galileo+Galilei,+30,+Tessera,+VE,+Italia/Cuevas+de+Škocjan,+Škocjan,+Eslovenia/Hotel+Harmonija,+Mengeš,+Eslovenia/" target="_blank" class="google-maps-link">Ver Ruta del Día 1 en Google Maps</a>
             <div class="accommodation">
                 <strong>Alojamiento:</strong> Hotel Harmonija, Mengeš. 🛌
             </div>
-            <div class="food">
-                <strong>Cena:</strong> En el hotel para reponer fuerzas tras un día intenso.
-            </div>
+            <p style="text-align: center;"><strong>Itinerario</strong></p>
+            <a href="https://www.google.com/maps/dir/Aeropuerto+Marco+Polo+de+Venecia,+Viale+Galileo+Galilei,+30,+Tessera,+VE,+Italia/Cuevas+de+Škocjan,+Škocjan,+Eslovenia/Hotel+Harmonija,+Mengeš,+Eslovenia/" target="_blank" class="google-maps-link">Ver en Google Maps <span class="emoji-hand">👇</span></a>
+            
+            <div class="scroll-to-top-btn" title="Subir al principio del documento">🔝</div>
         </div>
 
         <!-- Día 2 -->
         <div id="dia2" class="day-section">
             <h2>Día 2: Viernes, 1 de agosto - Lagos alpinos de ensueño 🏞️🛶</h2>
             <p>Un día dedicado a los dos lagos más famosos de Eslovenia, con paisajes que parecen sacados de un cuento de hadas.</p>
-            <h3>Mañana (08:30 - 13:00): El icónico Lago Bled</h3>
+            <p><strong>Fecha:</strong> Viernes, 1 de agosto</p>
+            <p><strong>Ruta Principal:</strong> Hotel Harmonija -> Lago Bled -> Lago Bohinj -> Hotel Harmonija</p>
+            <p><strong>Distancia y Tiempo Conducción Estimado:</strong> ~160 km (ida y vuelta total), ~2h 30min (total sin paradas)</p>
+            <h3>Horarios:</h3>
             <ul>
-                <li>Salida del hotel, comprando un picnic por el camino.</li>
-                <li><strong>10:00:</strong> Llegada a Bled. Se recomienda aparcar en el parking del Castillo de Bled.</li>
-                <li><strong>10:00 - 12:00:</strong> Visita al Castillo de Bled 👑 para disfrutar de sus vistas espectaculares.</li>
-                <li><strong>12:00 - 13:00:</strong> Tiempo libre. Paseo por la orilla o viaje opcional en "Pletna" a la isla. 🛶</li>
-            </ul>
-            <h3>Tarde (13:00 - 19:30): El sereno Lago Bohinj</h3>
-             <ul>
-                <li><strong>13:00 - 14:00:</strong> Corto trayecto en coche hasta el Lago Bohinj.</li>
-                <li><strong>14:00 - 15:00:</strong> Comida de picnic a orillas del lago. 🌳</li>
-                <li><strong>15:00 - 18:30:</strong> Tarde de actividades a elegir.</li>
-            </ul>
-            <div class="highlight">
-                <strong>Grupo 1 (Activos) 🚶‍♂️:</strong> Caminata a la Cascada Savica (1h aprox. i/v desde el parking).
-            </div>
-             <div class="highlight">
-                <strong>Grupo 2 (Relax) 🛀:</strong> Baño en las tranquilas aguas del lago, kayak o simplemente relajarse al sol.
-            </div>
-            <h3>Noche:</h3>
-            <ul>
-                <li><strong>19:30:</strong> Regreso al hotel, con una parada para comprar provisiones para la cena.</li>
+                <li><strong>08:30:</strong> Salida desde Hotel Harmonija, por el camino compramos picnic para la comida. 🧺🛒</li>
+                <li><strong>10:00:</strong> Llegada a Bled y aparcamiento. 🅿️<br>Vamos directamente al parking del Castillo de Bled 🏰 o a alguno de los parkings públicos cercanos al lago. En agosto estarán los parkings hasta arriba, pueden llenarse rápido. 🚦</li>
+                <li><strong>10:00 - 12:00:</strong> Visita al Castillo de Bled. 👑<br>Todo el grupo puede subir al castillo (en coche o caminando si os apetece un poco de cuesta). Vistas panorámicas del lago, la isla y los Alpes Julianos. 🏔️📸</li>
+                <li><strong>12:00 - 13:00:</strong> Paseo por el Lago de Bled / Pletna a la Isla (Opcional). 🛶⛪<br>Los que quieran, pueden dar un paseo por la orilla del lago o tomar una "Pletna" (barca tradicional) para visitar la iglesia en la isla. Los que prefieran un ritmo más lento pueden quedarse en la orilla, disfrutar de un café ☕ o simplemente de las vistas.</li>
+                <li><strong>13:00 - 14:00:</strong> Traslado al Lago Bohinj. 🚗<br>Aprox. 30 minutos de viaje hacia el Lago Bohinj. Podemos aparcar cerca de Ribčev Laz (extremo este del lago) o Ukanc (extremo oeste, más cerca de la Cascada Savica).</li>
+                <li><strong>14:00 - 15:00:</strong> Comida. 🍽️<br>Picnic junto al lago Bohinj. 🌳</li>
+                <li><strong>15:00 - 18:30:</strong> Tarde en Bohinj (División del Grupo):
+                    <div class="highlight">
+                        <strong>Grupo 1 (Senderistas/Activos) 🚶‍♂️🌲:</strong> Cascada Savica: Subimos hasta el parking de la Cascada Savica (Parkirišče Savica). Realizad la caminata de 1 hora (ida y vuelta) hasta la cascada desde el parking. 💧🚶‍♀️
+                    </div>
+                    <div class="highlight">
+                        <strong>Grupo 2 (Relax/Baño) 🛀☀️:</strong> Los que se queden en el Lago Bohinj, que disfruten de las playas o zonas de baño. El lago es más tranquilo y menos concurrido que Bled para bañarse. Se pueden alquilar kayaks 🛶 o tumbarse a la bartola. 🧘‍♀️
+                    </div>
+                </li>
+                <li><strong>19:30:</strong> Regreso a nuestro alojamiento. 🏡</li>
+                <li><strong>20:00:</strong> Parada técnica - suministros para la cena 🛒🍲</li>
+                <li><strong>21:00:</strong> Llegada al hotel y cena. 🍽️</li>
             </ul>
             <div class="accommodation">
                 <strong>Alojamiento:</strong> Hotel Harmonija, Mengeš. 🛌
             </div>
-            <div class="route-details">Ruta del Día: Hotel → Lago Bled → Lago Bohinj → Hotel</div>
-            <a href="https://www.google.com/maps/dir/Hotel+Harmonija,+Mengeš,+Eslovenia/Lago+de+Bled,+Bled,+Eslovenia/Lago+de+Bohinj,+Eslovenia/Hotel+Harmonija,+Mengeš,+Eslovenia/" target="_blank" class="google-maps-link">Ver Ruta del Día 2 en Google Maps</a>
+            <p style="text-align: center;"><strong>Itinerario</strong></p>
+            <a href="https://www.google.com/maps/dir/Hotel+Harmonija,+Mengeš,+Eslovenia/Lago+de+Bled,+Bled,+Eslovenia/Lago+de+Bohinj,+Eslovenia/Hotel+Harmonija,+Mengeš,+Eslovenia/" target="_blank" class="google-maps-link">Ver en Google Maps <span class="emoji-hand">👇</span></a>
+            
+            <div class="scroll-to-top-btn" title="Subir al principio del documento">🔝</div>
         </div>
 
         <!-- Día 3 -->
         <div id="dia3" class="day-section">
             <h2>Día 3: Sábado, 2 de agosto - Encanto medieval y capital vibrante 🏰🏙️</h2>
-            <p>Combinamos la visita a un pueblo histórico con la energía y belleza de la capital eslovena, Ljubljana.</p>
-            <h3>Mañana (09:30 - 12:30): Joya Medieval</h3>
+            <p>Combinamos la visita a un pueblo histórico con la visita a la capital eslovena, Ljubljana.</p>
+            <p><strong>Fecha:</strong> Sábado, 2 de agosto</p>
+            <p><strong>Ruta Principal:</strong> Hotel Harmonija -> (Pueblo medieval: Škofja Loka o Kamnik) -> Ljubljana -> Hotel Harmonija</p>
+            <p><strong>Distancia y Tiempo Conducción Estimado:</strong> ~85 km (total circuito), ~2h (total sin paradas)</p>
+            <h3>Horarios:</h3>
             <ul>
-                <li><strong>09:30:</strong> Salida del hotel.</li>
-                <li><strong>10:00 - 12:00:</strong> Explorar el pueblo medieval de Škofja Loka, su castillo y sus pintorescas calles.</li>
-                <li><strong>12:00 - 12:30:</strong> Traslado al cercano Lago Zbilje.</li>
+                <li><strong>09:30:</strong> Salida del Hotel Harmonija. 🚗</li>
+                <li><strong>10:00 - 12:00:</strong> Visita el pueblo medieval de Škofja Loka. 🏘️<br>Castillo de Škofja Loka (se puede subir andando o en coche). 🏯<br>Puente de piedra, callejuelas empedradas, casas históricas. 🚶‍♀️ picturesque</li>
+                <li><strong>12:00 - 12:30::</strong> Traslado al Lago Zbilje. 🚙</li>
+                <li><strong>12:30 - 13:30:</strong> Picnic en Zbiljsko jezero. 🧺🦆<br>Lago con patos, sombra, bancos, ideal para comer al aire libre. 🌳<br>Posibilidad de helado 🍦 o café ☕ en el bar junto al lago.</li>
+                <li><strong>13:30 - 14:00:</strong> Traslado a Ljubljana. 🚌</li>
+                <li><strong>14:00 - Tarde/Noche:</strong> Explorar Ljubljana. 🚶‍♀️<br>Puente Triple, Puente de los Dragones 🐉, Mercado Central. 🌉🛍️<br>Subir al Castillo de Ljubljana (funicular o a pie). 🏰<br>Pasear por la orilla del río Ljubljanica. 🛶<br>Cenar en Ljubljana en pizzería 🍕 o comida callejera típica en Burek Olimpija 🥙 o vuelta al hotel, ya veremos… 🤔</li>
+                <li><strong>20:30 - 21:00:</strong> Regreso al Hotel Harmonija. 🏡</li>
             </ul>
-            <div class="food">
-                <strong>Almuerzo:</strong> Picnic relajado en Zbiljsko jezero, un lago ideal con patos, sombra y bancos.
-            </div>
-            <h3>Tarde/Noche (14:00 en adelante): Ljubljana</h3>
-            <ul>
-                <li>Traslado a Ljubljana.</li>
-                <li><strong>Actividades:</strong> Explorar el Puente Triple, el Puente de los Dragones 🐉, y subir al Castillo de Ljubljana en funicular.</li>
-                <li>Pasear por la animada orilla del río Ljubljanica.</li>
-            </ul>
-            <div class="food">
-                <strong>Comida callejera:</strong> No se pierdan un Burek en "Burek Olimpija".
-                <strong>Cena:</strong> Pizzería en Ljubljana o de vuelta en el hotel.
-            </div>
             <div class="accommodation">
                 <strong>Alojamiento:</strong> Hotel Harmonija, Mengeš. 🛌
             </div>
-             <div class="route-details">Ruta del Día: Hotel → Škofja Loka → Lago Zbilje → Ljubljana → Hotel</div>
-            <a href="https://www.google.com/maps/dir/Hotel+Harmonija,+Mengeš,+Eslovenia/Škofja+Loka,+Eslovenia/Zbiljsko+jezero,+Eslovenia/Ljubljana+Castle,+Ljubljana,+Eslovenia/Hotel+Harmonija,+Mengeš,+Eslovenia/" target="_blank" class="google-maps-link">Ver Ruta del Día 3 en Google Maps</a>
+            <p style="text-align: center;"><strong>Itinerario</strong></p>
+            <a href="https://www.google.com/maps/dir/Hotel+Harmonija,+Mengeš,+Eslovenia/Škofja+Loka,+Eslovenia/Zbiljsko+jezero,+Eslovenia/Ljubljana+Castle,+Ljubljana,+Eslovenia/Hotel+Harmonija,+Mengeš,+Eslovenia/" target="_blank" class="google-maps-link">Ver en Google Maps <span class="emoji-hand">👇</span></a>
+            
+            <div class="scroll-to-top-btn" title="Subir al principio del documento">🔝</div>
         </div>
 
         <!-- Día 4 -->
         <div id="dia4" class="day-section">
-            <h2>Día 4: Domingo, 3 de agosto - Maravilla natural y rumbo a la costa croata 🏞️🇭🇷</h2>
-            <p>Día de transición largo pero espectacular, desde Eslovenia hasta el paraíso acuático de Plitvice y la costa dálmata.</p>
+            <h2>Día 4: Domingo, 3 de agosto - Maravilla natural y rumbo a la costa croata 🏞️</h2>
+            <p>Día de transición largo pero espectacular, desde Eslovenia hasta los Lagos de Plitvice y la costa dálmata. ¡ESTAMOS EN CROACIA!</p>
+            <p><strong>Fecha:</strong> Domingo, 3 de agosto</p>
+            <p><strong>Ruta Principal:</strong> Hotel Harmonija -> Karlovac (Croacia) -> Parque Nacional Lagos de Plitvice (Entrada 1) -> Apartmani M&Z (Plat 25, 22202, Primošten, Croacia)</p>
+            <p><strong>Distancia y Tiempo Conducción Estimado:</strong> ~485 km, ~6H - 6h 20min (total sin paradas largas)</p>
             <div class="advice">
-                <strong>Consejo Clave:</strong> ¡La salida temprana es fundamental para aprovechar el día en Plitvice!
+                <strong>Madrugón</strong> ¡TENEMOS QUE SALIR PRONTO! del Hotel Harmonija. ⏰🚗
             </div>
+            <h3>Horarios Sugeridos:</h3>
             <ul>
-                <li><strong>08:30:</strong> Salida del hotel. Parada para comprar picnic. 🥪🍎</li>
-                <li><strong>13:00 - 13:30:</strong> Llegada al Parque Nacional de los Lagos de Plitvice (Entrada 1).</li>
-                <li><strong>13:30 - 18:00:</strong> Visita al parque. Se recomienda seguir una ruta como la 'C' para una experiencia completa. 🚶‍♀️💧</li>
-                <li><strong>18:00:</strong> Salida de Plitvice hacia Primošten.</li>
-                <li><strong>19:30 - 20:00:</strong> Parada para comprar comida para la cena. 🛒</li>
+                <li><strong>08:30:</strong> Salida del Hotel Harmonija. 🚗</li>
+                <li><strong>08:30 - 09:00:</strong> Parada para comprar comida (picnic para el parque, si lo hemos comprado la noche anterior mejor). 🥪🍎</li>
+                <li><strong>13:00 - 13:30:</strong> Llegada estimada al Parque Nacional Lagos de Plitvice (Entrada 1). (aparcar 🅿️, ir al baño 🚻, prepararse).</li>
+                <li><strong>13:30 - 17:30/18:00:</strong> Visita al parque (aprox. 4 horas efectivas). Seguimos una ruta recomendada desde la entrada 1 (ej. Ruta C o similar). 🚶‍♀️💧🌳</li>
+                <li><strong>18:00:</strong> Salida de Plitvice hacia Primošten. 🛣️</li>
+                <li><strong>19:30 - 20:00:</strong> Parada para comprar comida para la cena. 🛒🍲</li>
+                <li><strong>20:00 - 20:30:</strong> Llegada estimada Primošten. ¡Atardecer sobre las 20:10-20:15! 🌅 Con suerte, un chapuzón rápido al llegar. 🏊‍♀️</li>
+                <li><strong>20:30 - 21:30:</strong> Cena en los apartamentos. 🍽️</li>
             </ul>
-            <div class="highlight">
-                <strong>Toque de Ensueño ✨:</strong> Intenten llegar al apartamento sobre las 20:15 para ver la puesta de sol sobre el Adriático. ¡Un chapuzón rápido puede ser la mejor bienvenida! 🌅🏊‍♀️
-            </div>
             <div class="accommodation">
-                <strong>Alojamiento:</strong> Apartmani M&Z, Plat 25, 22202, Primošten, Croacia. 🏡
+                <strong>Alojamiento:</strong> Apartmani M&Z, Primošten. 🏡
             </div>
-            <div class="route-details">Ruta del Día: Hotel Harmonija → Lagos de Plitvice → Apartmani M&Z, Primošten</div>
-            <a href="https://www.google.com/maps/dir/Hotel+Harmonija,+Mengeš,+Eslovenia/Parque+Nacional+de+los+Lagos+de+Plitvice,+Plitvička+Jezera,+Croacia/Apartmani+M&Z,+Plat+25,+22202,+Primošten,+Croacia/" target="_blank" class="google-maps-link">Ver Ruta del Día 4 en Google Maps</a>
+            <p style="text-align: center;"><strong>Itinerario</strong></p>
+            <a href="https://www.google.com/maps/dir/Hotel+Harmonija,+Mengeš,+Eslovenia/Parque+Nacional+de+los+Lagos+de+Plitvice,+Plitvička+Jezera,+Croacia/Apartmani+M&Z,+Plat+25,+22202,+Primošten,+Croacia/" target="_blank" class="google-maps-link">Ver en Google Maps <span class="emoji-hand">👇</span></a>
+            
+            <div class="scroll-to-top-btn" title="Subir al principio del documento">🔝</div>
         </div>
 
         <!-- Día 5 -->
         <div id="dia5" class="day-section">
             <h2>Día 5: Lunes, 4 de agosto - Día de playa en Primošten y tarde a elegir ☀️🏖️</h2>
-            <p>Un merecido día de descanso y sol en una de las playas más bonitas de Croacia, con opciones para todos los gustos por la tarde.</p>
-            <h3>Mañana (09:30 - 14:00): Relax en Primošten</h3>
+            <p>Merecido día de descanso y sol en una de las playas más bonitas de Croacia, con opciones para todos los gustos por la tarde.</p>
+            <p><strong>Fecha:</strong> Lunes, 4 de agosto</p>
+            <p><strong>Ruta Principal:</strong> Apartmani M&Z, Primošten.</p>
+            <p><strong>Distancia y tiempo conducción estimado:</strong> 0 km (día de relax en la playa) 😌</p>
+            <h3>Horario:</h3>
             <ul>
-                <li>Disfruten de la Playa Mala Raduča, con su arena fina y aguas turquesas. 🌊</li>
-                <li>Actividad suave: Paseo por las callejuelas del casco antiguo hasta la iglesia de San Jorge. 🚶‍♀️⛪</li>
-                <li>Tiempo para juegos, snorkel 🐠 o simplemente no hacer nada.</li>
+                <li><strong>09:30 – 13:00:</strong> Playa y descanso. ⛱️<br>Playa Mala Raduča: arena fina 🏖️, aguas turquesa 🌊.<br>Paseo por el casco antiguo si queréis algo de actividad suave: callejuelas, vistas al mar, la iglesia de San Jorge en lo alto del promontorio. 🚶‍♀️⛪<br>Juegos de pelota ⚽ y snorkel 🐠 </li>
+                <li><strong>14:00:</strong> Compramos comida. 🛒</li>
+                <li><strong>14:30 - 15:30:</strong> Comida. 🍽️</li>
+                <li><strong>A partir de las 15:30:</strong> Tarde a elegir:
+                    <div class="highlight">
+                        <strong>🏰 Opción 1: Šibenik histórico + helado en la Riva</strong><br>Salida: 15:30 (30 min en coche) 🚗<br>Visita a:<br>Catedral de Santiago ⛪<br>Fortaleza de San Miguel (opcional) 🛡️<br>Paseo por el casco antiguo y paseo marítimo 🚶‍♀️🌊<br>🍦 Helado o refresco en las terrazas frente al mar. 🍹<br>Regreso a Primošten: 19:30 (cena en apartamentos) 🏡
+                    </div>
+                    <div class="highlight">
+                        <strong>🌅 Opción 2: Atardecer en la península de Primošten</strong><br>Si no queréis coger coche, daos un paseo por la península al atardecer: 🚶‍♂️🌇<br>Ruta circular junto al mar (sendero pavimentado). 🚶‍♀️<br>Paradas para fotos 📸, bancos, pinos y miradores. 🌲🔭<br>Iglesia San Jorge, vista panorámica, atardecer. ⛪🌅<br>Cena en los apartamentos 🍽️<br>👉 Muy accesible, sin esfuerzo, precioso al atardecer. 😍
+                    </div>
+                </li>
             </ul>
-             <h3>Tarde (Desde las 15:30): Tarde a Elegir</h3>
-             <div class="highlight">
-                <strong>Opción 1: Šibenik Histórico 🏰.</strong> A 30 min en coche, visiten la Catedral de Santiago y la Fortaleza de San Miguel, terminando con un helado en el paseo marítimo.
-            </div>
-             <div class="highlight">
-                <strong>Opción 2: Atardecer en Primošten 🌅.</strong> Sin coger el coche, den un paseo por la ruta circular de la península. Las vistas al atardecer desde la Iglesia de San Jorge son inolvidables y muy accesibles.
-            </div>
             <div class="accommodation">
                 <strong>Alojamiento:</strong> Apartmani M&Z, Primošten. 🛌
             </div>
-            <div class="food">
-                <strong>Comida y Cena:</strong> Aprovechando los apartamentos, se puede comer y cenar en "casa" después de comprar en un supermercado local. 🛒
-            </div>
-             <a href="https://www.google.com/maps/place/Apartmani+M&Z/@43.585834,15.923838,15z" target="_blank" class="google-maps-link">Ver Ubicación en Google Maps</a>
+            <p style="text-align: center;"><strong>Itinerario</strong></p>
+            <a href="https://www.google.com/maps/place/Apartmani+M&Z/@43.585834,15.923838,15z" target="_blank" class="google-maps-link">Ver en Google Maps <span class="emoji-hand">👇</span></a>
+            
+            <div class="scroll-to-top-btn" title="Subir al principio del documento">🔝</div>
         </div>
 
         <!-- Día 6 -->
         <div id="dia6" class="day-section">
             <h2>Día 6: Martes, 5 de agosto - Joyas dálmatas: Trogir y Split 💎🏛️</h2>
             <p>Día de inmersión cultural visitando dos ciudades declaradas Patrimonio de la Humanidad por la UNESCO.</p>
-             <div class="advice">
-                <strong>Consejo de Tráfico:</strong> El tráfico cerca de Split puede ser intenso en verano. ¡Paciencia! 🚦
-            </div>
+            <p><strong>Fecha:</strong> Martes, 5 de agosto</p>
+            <p><strong>Ruta Principal:</strong> Apartmani M&Z -> Trogir -> Split -> Apartmani M&Z</p>
+            <p><strong>Distancia y Tiempo Conducción Estimado:</strong> ~160 km (total circuito), ~2h 30min - 3h (total sin paradas, el tráfico cerca de Split puede ser la leche) 🚦🚗</p>
+            <h3>Horarios Sugeridos:</h3>
             <ul>
-                <li><strong>09:30:</strong> Salida de Primošten.</li>
-                <li><strong>10:30 - 13:00:</strong> Visita a Trogir, explorando su encantador casco antiguo en una pequeña isla.</li>
-                <li><strong>13:00 - 13:45:</strong> Traslado a Split.</li>
-            </ul>
-            <div class="food">
-                <strong>Almuerzo:</strong> Para algo rápido y barato en Trogir, "Fast Food Obelix" es una opción popular.
-            </div>
-            <h3>Tarde/Noche: Explorando Split</h3>
-            <ul>
-                <li>Visita al impresionante Palacio de Diocleciano. 🏛️</li>
-                <li>Paseo por la animada Riva (paseo marítimo). 🌊</li>
-                <li>Subida opcional a la colina de Marjan para unas vistas panorámicas.</li>
+                <li><strong>09:30:</strong> Salida de Primošten. 🛣️</li>
+                <li><strong>10:30 - 13:00:</strong> Visita a Trogir (UNESCO). Visitamos su encantador casco antiguo isleño 🏘️, posible sitio de comida barata (Fast Food Obelix) 🍔🍟</li>
+                <li><strong>13:00 - 13:45:</strong> Traslado a Split. 🚙</li>
+                <li><strong>13:45 - Tarde/Noche:</strong> Explorar Split. 🚶‍♀️<br>Posible comida al llegar si no hemos comido en Trogir 🍽️<br>Palacio de Diocleciano (UNESCO). 🏛️<br>Paseo marítimo (Riva). 🌊<br>Colina Marjan para vistas. 🏞️<br>Comprar cena!!! 🛒</li>
+                <li><strong>20:30 - 21:00:</strong> Regreso a Primošten. 🏡</li>
+                <li><strong>21:00:</strong> Cena en casa 🍝</li>
             </ul>
             <div class="accommodation">
                 <strong>Alojamiento:</strong> Apartmani M&Z, Primošten. 🛌
             </div>
-             <div class="route-details">Ruta del Día: Primošten → Trogir → Split → Primošten</div>
-            <a href="https://www.google.com/maps/dir/Apartmani+M&Z,+Primošten,+Croacia/Trogir,+Croacia/Palacio+de+Diocleciano,+Split,+Croacia/Apartmani+M&Z,+Primošten,+Croacia/" target="_blank" class="google-maps-link">Ver Ruta del Día 6 en Google Maps</a>
+            <p style="text-align: center;"><strong>Itinerario</strong></p>
+            <a href="https://www.google.com/maps/dir/Apartmani+M&Z,+Primošten,+Croacia/Trogir,+Croacia/Palacio+de+Diocleciano,+Split,+Croacia/Apartmani+M&Z,+Primošten,+Croacia/" target="_blank" class="google-maps-link">Ver en Google Maps <span class="emoji-hand">👇</span></a>
+            
+            <div class="scroll-to-top-btn" title="Subir al principio del documento">🔝</div>
         </div>
         
         <!-- Día 7 -->
         <div id="dia7" class="day-section">
             <h2>Día 7: Miércoles, 6 de agosto - Saludo al Sol en Zadar y rumbo al norte ☀️🎶</h2>
-            <p>Nos despedimos de la costa dálmata con una parada en la innovadora Zadar antes de dirigirnos hacia el norte de Croacia.</p>
+            <p>Nos despedimos de la costa dálmata con una parada en Zadar antes de dirigirnos hacia el norte de Croacia.</p>
+            <p><strong>Fecha:</strong> Miércoles, 6 de agosto</p>
+            <p><strong>Ruta Principal:</strong> Apartmani M&Z -> Zadar -> Hostel TRSAT (Rijeka)</p>
+            <p><strong>Distancia y tiempo conducción estimado:</strong> ~420 km, ~4h 30min - 5h 🛣️</p>
+            <h3>Horarios Sugeridos:</h3>
             <ul>
-                <li><strong>09:00:</strong> Check-out y salida de Primošten.</li>
-                <li><strong>10:00 - 13:30:</strong> Visita a Zadar.</li>
-            </ul>
-            <div class="highlight">
-                <strong>Toque de Ensueño ✨:</strong> No se pierdan el Órgano de Mar, que crea música con las olas, y el Saludo al Sol, una instalación artística solar. ¡Son experiencias únicas!
-            </div>
-            <ul>
-                <li>Exploren también el Foro Romano y la Iglesia de San Donato.</li>
-                 <li><strong>13:30 - 14:00:</strong> Comida rápida en Zadar.</li>
-                <li><strong>14:00:</strong> Salida hacia Rijeka.</li>
-                <li><strong>18:00 - 18:30:</strong> Llegada y check-in en el hostel en Rijeka.</li>
-            </ul>
-            <h3>Tarde/Noche:</h3>
-            <ul>
-                <li>Paseo por el barrio de Trsat para ver su castillo y disfrutar de las vistas nocturnas de Rijeka. 🌃</li>
+                <li><strong>09:00:</strong> Salida de Primošten. (check-out) 🚗</li>
+                <li><strong>10:00 - 13:30:</strong> Visita a Zadar. 🚶‍♀️<br>Órgano de Mar 🎶 y Saludo al Sol. 🌅<br>Foro Romano 🏛️, Iglesia de San Donato. ⛪<br>Calle Kalelarga. 🛍️</li>
+                <li><strong>13:30 - 14:00:</strong> Comida rápida en Zadar. 🍕</li>
+                <li><strong>14:00:</strong> Salida de Zadar hacia Rijeka. 🛣️</li>
+                <li><strong>18:00 - 18:30:</strong> Llegada al Hostel TRSAT, Rijeka, Check-in. 🏨</li>
+                <li><strong>Tarde/Noche:</strong> Paseo por Trsat (castillo 🏰, santuario) y vistas de Rijeka. 🌃</li>
             </ul>
             <div class="accommodation">
                 <strong>Alojamiento:</strong> Hostel TRSAT, Rijeka. 🛌
             </div>
-             <div class="route-details">Ruta del Día: Primošten → Zadar → Rijeka</div>
-            <a href="https://www.google.com/maps/dir/Apartmani+M&Z,+Primošten,+Croacia/Órgano+de+mar,+Zadar,+Croacia/Hostel+TRSAT,+Rijeka,+Croacia/" target="_blank" class="google-maps-link">Ver Ruta del Día 7 en Google Maps</a>
+            <p style="text-align: center;"><strong>Itinerario</strong></p>
+            <a href="https://www.google.com/maps/dir/Apartmani+M&Z,+Primošten,+Croacia/Órgano+de+mar,+Zadar,+Croacia/Hostel+TRSAT,+Rijeka,+Croacia/" target="_blank" class="google-maps-link">Ver en Google Maps <span class="emoji-hand">👇</span></a>
+            
+            <div class="scroll-to-top-btn" title="Subir al principio del documento">🔝</div>
         </div>
         
         <!-- Día 8 -->
         <div id="dia8" class="day-section">
-            <h2>Día 8: Jueves, 7 de agosto - De Rijeka a la serenísima Venecia! 🌉🇮🇹</h2>
-            <p>El viaje circular nos lleva de vuelta a Italia, culminando con una tarde mágica en la inconfundible Venecia.</p>
+            <h2>Día 8: Jueves, 7 de agosto - De Rijeka a Venecia! 🌉🇮🇹</h2>
+            <p>El viaje circular nos lleva de vuelta a Italia, terminamos con una tarde mágica Venecia.</p>
+            <p><strong>Fecha:</strong> Jueves, 7 de agosto</p>
+            <p><strong>Ruta Principal:</strong> Hostel TRSAT (Rijeka) -> Hotel Duca D'Aosta (Mogliano Veneto) -> Venecia (parking Tronchetto/Piazzale Roma)</p>
+            <p><strong>Distancia y Tiempo Conducción Estimado:</strong> ~240 km, ~3h 15min - 3h 45min (sin paradas, tráfico Venecia) 🚗🚦</p>
+            <h3>Horarios Sugeridos:</h3>
             <ul>
-                 <li><strong>Mañana:</strong> Desayuno tranquilo y últimas vistas desde Trsat.</li>
-                <li><strong>10:00:</strong> Salida de Rijeka.</li>
-                <li><strong>13:15 - 13:45:</strong> Llegada al hotel en Mogliano Veneto. Check-in, dejar equipaje y comer algo rápido.</li>
-                 <li><strong>14:00 - 14:30:</strong> Dejar los coches en un parking de Venecia (Tronchetto o Piazzale Roma).</li>
+                <li><strong>Mañana:</strong> Desayuno tranquilo y últimas vistas de Trsat/Rijeka. ☕</li>
+                <li><strong>10:00:</strong> Salida de Rijeka (check-out). 🛣️</li>
+                <li><strong>13:15 - 13:45:</strong> Llegada estimada al Hotel Duca D'Aosta, Mogliano Veneto. Check-in, dejar equipaje 🎒 y comer algo cerca (hay centro comercial de camino). 🍽️🛍️</li>
+                <li><strong>14:00 - 14:30:</strong> Traslado al parking de Venecia (Tronchetto o Piazzale Roma). Dejar los coches. 🅿️</li>
+                <li><strong>14:30 - Noche:</strong> Explorar Venecia. 🎭<br>Plaza San Marcos 🕊️, Puente Rialto. 🌉<br>Paseo en vaporetto 🚤 o góndola (opcional). 🛶<br>Perderse por sus canales. 🚶‍♀️<br>Cenar pizza!!! 🍕</li>
+                <li><strong>Al final de la tarde/noche:</strong> Regreso al Hotel Duca D'Aosta en Mogliano Veneto. 🏨</li>
             </ul>
-             <h3>Tarde/Noche: Magia en Venecia</h3>
-             <ul>
-                <li>Explorar la Plaza San Marcos 🕊️ y el Puente de Rialto.</li>
-                <li>Consideren un paseo en Vaporetto para ver la ciudad desde el agua. 🚤</li>
-                <li>La mejor actividad: perderse por sus laberínticos canales y callejuelas.</li>
-             </ul>
             <div class="food">
                 <strong>Cena:</strong> ¡Una merecida pizza en Venecia para celebrar el viaje! 🍕
             </div>
             <div class="accommodation">
                 <strong>Alojamiento:</strong> Hotel Duca D'Aosta, Mogliano Veneto. 🛌
             </div>
-            <div class="route-details">Ruta del Día: Rijeka → Mogliano Veneto → Venecia (Parking)</div>
-            <a href="https://www.google.com/maps/dir/Hostel+TRSAT,+Rijeka,+Croacia/Hotel+Duca+D'Aosta,+Mogliano+Veneto,+TV,+Italia/Tronchetto+Parking,+Venecia,+VE,+Italia/" target="_blank" class="google-maps-link">Ver Ruta del Día 8 en Google Maps</a>
+            <p style="text-align: center;"><strong>Itinerario</strong></p>
+            <a href="https://www.google.com/maps/dir/Hostel+TRSAT,+Rijeka,+Croacia/Hotel+Duca+D'Aosta,+Mogliano+Veneto,+TV,+Italia/Tronchetto+Parking,+Venecia,+VE,+Italia/" target="_blank" class="google-maps-link">Ver en Google Maps <span class="emoji-hand">👇</span></a>
+            
+            <div class="scroll-to-top-btn" title="Subir al principio del documento">🔝</div>
         </div>
         
         <!-- Día 9 -->
         <div id="dia9" class="day-section">
             <h2>Día 9: Viernes, 8 de agosto - Despedida con sabor a Treviso 👋🍇</h2>
-            <p>Un final de viaje relajado, explorando la encantadora y menos concurrida Treviso antes de dirigirnos al aeropuerto.</p>
+            <p>Lo primero, felicitar a alguien del grupo... Un final de viaje relajado, explorando Treviso antes de dirigirnos al aeropuerto y llorar, no sabemos todavía si de alegría o de pena!</p>
+            <p><strong>Fecha:</strong> Viernes, 8 de agosto</p>
+            <p><strong>Ruta Principal:</strong> Hotel Duca D'Aosta -> Treviso -> Aeropuerto Marco Polo Venecia (VCE) ✈️</p>
+            <p><strong>Distancia y Tiempo Conducción Estimado:</strong> ~45 km (total circuito), ~1h (total sin paradas)</p>
+            <h3>Horarios Sugeridos:</h3>
             <ul>
-                <li><strong>Mañana:</strong> Desayuno y check-out del hotel.</li>
-                <li><strong>09:30 - 10:00:</strong> Corto trayecto en coche a Treviso.</li>
-                <li><strong>10:00 - 14:30:</strong> Paseo por el centro de Treviso, conocido como "la pequeña Venecia" por sus canales.</li>
+                <li><strong>Mañana:</strong> Desayuno y check-out. ☕🏨</li>
+                <li><strong>09:30 - 10:00:</strong> Traslado a Treviso. 🚗</li>
+                <li><strong>10:00 - 14:30:</strong> Paseo por el encantador centro de Treviso, sus canales y murallas y canales. 🏘️</li>
+                <li><strong>14:30 - 15:15:</strong> Comida en Treviso. 🥗</li>
+                <li><strong>15:15:</strong> Salida hacia el Aeropuerto Marco Polo (VCE) 30 min. 🛫</li>
+                <li><strong>15:55 - 16:30::</strong> Devolución de coches de alquiler en VCE. 🔑🚗</li>
+                <li><strong>16:30 - 19:50:</strong> Tiempo en el aeropuerto para facturación y embarque. ✈️🛂</li>
+                <li><strong>19:50:</strong> Vuelo de regreso. 👋</li>
             </ul>
-            <div class="food">
-                <strong>Almuerzo:</strong> Comida ligera en uno de los muchos cafés y restaurantes con encanto de Treviso. 🥗 
+            <p style="text-align: center;"><strong>Itinerario</strong></p>
+            <a href="https://www.google.com/maps/dir/Hotel+Duca+D'Aosta,+Mogliano+Veneto,+TV,+Italia/Treviso,+TV,+Italia/Aeropuerto+Marco+Polo+de+Venecia,+Tessera,+VE,+Italia/" target="_blank" class="google-maps-link">Ver en Google Maps <span class="emoji-hand">👇</span></a>
+            
+            <div class="day-quote-section">
+                <em>"El mundo es un libro y aquellos que no viajan solo leen una página."</em><br>
+                <span class="author">— San Agustín</span>
             </div>
-            <h3>Tarde: Regreso</h3>
-            <ul>
-                <li><strong>15:15:</strong> Salida hacia el Aeropuerto Marco Polo (VCE). 🛫</li>
-                <li><strong>15:55 - 16:30:</strong> Devolución de los coches de alquiler.</li>
-                <li><strong>16:30 en adelante:</strong> Tiempo para facturación, seguridad y embarque.</li>
-                <li><strong>19:50:</strong> Vuelo de regreso. ¡Fin de la aventura! 👋</li>
-            </ul>
-             <div class="route-details">Ruta del Día: Hotel → Treviso → Aeropuerto VCE</div>
-            <a href="https://www.google.com/maps/dir/Hotel+Duca+D'Aosta,+Mogliano+Veneto,+TV,+Italia/Treviso,+TV,+Italia/Aeropuerto+Marco+Polo+de+Venecia,+Tessera,+VE,+Italia/" target="_blank" class="google-maps-link">Ver Ruta del Día 9 en Google Maps</a>
+
+            <div class="scroll-to-top-btn" title="Subir al principio del documento">🔝</div>
         </div>
+
+        <!-- Global LLM Feature Section -->
+        <div class="global-llm-feature-section">
+            <h3>Por si vamos a algún restaurante!!!</h3>
+            <div class="llm-buttons-container">
+                <button class="llm-feature-btn" data-location="Eslovenia" data-results-id="results-eslovenia">✨ Comida en Eslovenia ✨ <span class="loading-spinner"></span></button>
+                <button class="llm-feature-btn" data-location="Croacia" data-results-id="results-croacia">✨ Comida en Croacia ✨ <span class="loading-spinner"></span></button>
+                <button class="llm-feature-btn" data-location="Italia (Veneto)" data-results-id="results-italia">✨ Comida en Italia ✨ <span class="loading-spinner"></span></button>
+            </div>
+            <div class="llm-results-container">
+                <div id="results-eslovenia" class="llm-results"></div>
+                <div id="results-croacia" class="llm-results"></div>
+                <div id="results-italia" class="llm-results"></div>
+            </div>
+        </div>
+
     </div>
     <script>
         // Smooth scroll for timeline links
@@ -438,6 +723,80 @@
                 // Optional: Add active class to clicked link
                 document.querySelectorAll('.timeline a').forEach(link => link.classList.remove('active'));
                 this.classList.add('active');
+            });
+        });
+
+        // Add event listeners for the new scroll-to-top buttons
+        document.querySelectorAll('.scroll-to-top-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                // Scroll to the very top of the body
+                document.body.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Gemini API integration for local food suggestions (Global Section)
+        document.querySelectorAll('.global-llm-feature-section .llm-feature-btn').forEach(button => {
+            button.addEventListener('click', async function () {
+                const location = this.dataset.location;
+                const resultsId = this.dataset.resultsId;
+                const resultsDiv = document.getElementById(resultsId);
+                const spinner = this.querySelector('.loading-spinner');
+
+                // Toggle visibility if already showing
+                if (resultsDiv.style.display === 'block') {
+                    resultsDiv.style.display = 'none';
+                    resultsDiv.innerHTML = ''; // Clear previous results
+                    return;
+                }
+
+                // Hide all other results divs
+                document.querySelectorAll('.llm-results').forEach(div => {
+                    if (div.id !== resultsId) {
+                        div.style.display = 'none';
+                        div.innerHTML = ''; // Clear other results
+                    }
+                });
+
+                resultsDiv.style.display = 'none'; // Hide current before loading
+                resultsDiv.innerHTML = ''; // Clear previous results
+                spinner.style.display = 'inline-block'; // Show spinner
+
+                const prompt = `Sugiere 3 platos o experiencias culinarias locales típicas de ${location}. Sé conciso y menciona el nombre del plato y una breve descripción.`;
+
+                try {
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; // Leave as-is for Canvas environment
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        resultsDiv.innerHTML = `<p><strong>Delicias de ${location}:</strong></p>${text.split('\n').map(item => `<p>${item}</p>`).join('')}`;
+                        resultsDiv.style.display = 'block'; // Show results
+                    } else {
+                        resultsDiv.innerHTML = '<p>Lo siento, no pude obtener sugerencias de comida en este momento. Inténtalo de nuevo más tarde.</p>';
+                        resultsDiv.style.display = 'block';
+                    }
+                } catch (error) {
+                    console.error("Error fetching Gemini API:", error);
+                    resultsDiv.innerHTML = '<p>Hubo un error al conectar con el servicio de sugerencias. Por favor, inténtalo de nuevo.</p>';
+                    resultsDiv.style.display = 'block';
+                } finally {
+                    spinner.style.display = 'none'; // Hide spinner
+                }
             });
         });
     </script>
