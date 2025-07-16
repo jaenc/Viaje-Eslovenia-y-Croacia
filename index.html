@@ -42,11 +42,10 @@
         .travel-quote {
             font-size: 1.1em; /* Slightly larger quote */
             font-style: italic;
-            text-align: right; /* Right justified */
+            text-align: center; /* Centered quote */
             max-width: 800px; /* Limit width for readability */
             margin: 15px auto 0 auto; /* Center the quote block, add top margin */
-            padding-right: 30px; /* Padding from the right edge of the container */
-            padding-left: 30px; /* Ensure it doesn't stick to the left edge either */
+            padding: 0 30px; /* Padding for readability */
             color: rgba(255,255,255,0.9); /* Slightly muted white for quote */
         }
         .travel-quote .author {
@@ -333,42 +332,41 @@
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .container {
-                width: 95%;
-                padding: 20px;
+                width: 100%; /* Ocupar todo el ancho para mejor control */
+                padding: 0 15px; /* Reducir padding lateral general */
                 margin: 15px auto;
+                box-sizing: border-box; /* Importante para que el padding no desborde */
             }
             .timeline {
-                justify-content: flex-start; /* Align buttons to the left on mobile */
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-                padding: 15px;
-                gap: 8px; /* Further reduced gap for mobile timeline */
-            }
-            .timeline::-webkit-scrollbar {
-                display: none;
+                /* Hacemos que la timeline "ignore" el padding del contenedor para eliminar el hueco blanco al hacer scroll */
+                margin-left: -15px;
+                margin-right: -15px;
+                padding-left: 15px; /* Restauramos el padding dentro de la barra */
+                padding-right: 15px;
+                justify-content: flex-start; /* Alinear botones a la izquierda */
+                gap: 12px; /* Espacio ajustado entre botones */
             }
             .timeline a {
-                padding: 6px 10px; /* Even further reduced padding for mobile buttons */
-                font-size: 0.8em; /* Even smaller font for mobile buttons */
-                flex-shrink: 0;
-                min-width: unset;
+                padding: 10px 18px; /* Botones más compactos */
+                font-size: 0.8em; /* Texto un poco más pequeño */
+            }
+            header {
+                padding: 1.5rem 1rem; /* Menos espacio vertical en el header */
+                border-radius: 0; /* Opcional: quitar bordes redondeados en móvil */
             }
             header h1 {
-                font-size: 2.2em;
+                font-size: 1.9em; /* Título principal más pequeño */
             }
             .travel-quote {
-                font-size: 0.95em;
-                padding-right: 20px;
-                padding-left: 20px;
+                font-size: 0.95em; /* Cita más pequeña */
+                padding: 0 15px;
             }
             .day-section {
                 padding: 20px;
                 margin-bottom: 30px;
             }
             .day-section h2 {
-                font-size: 1.7em;
+                font-size: 1.6em; /* Títulos de día más pequeños */
             }
             .day-section h3 {
                 font-size: 1.3em;
@@ -430,7 +428,7 @@
     <header>
         <h1>Viaje Vividores Eslovenia y Croacia 2025</h1>
         <p class="travel-quote">
-            <em>"Un viaje se mide mejor en amigos que en millas."</em><br>
+            <em>"Un viaje se mide mejor en amigos que en millas."</em>
             <span class="author">— Tim Cahill</span>
         </p>
     </header>
@@ -448,6 +446,7 @@
             <a href="#dia9">DÍA 9</a>
         </div>
 
+        <!-- El resto del contenido de los días (Día 1 a Día 9) permanece exactamente igual que en tu código original -->
         <!-- Día 1 -->
         <div id="dia1" class="day-section">
             <h2>Día 1: Jueves, 31 de julio - Llegada y cuevas mágicas del Señor de los Anillos 🧙‍♂️✨</h2>
@@ -738,7 +737,8 @@
         document.querySelectorAll('.scroll-to-top-btn').forEach(button => {
             button.addEventListener('click', function () {
                 // Scroll to the very top of the body
-                document.body.scrollIntoView({
+                window.scrollTo({
+                    top: 0,
                     behavior: 'smooth'
                 });
             });
@@ -752,64 +752,75 @@
                 const resultsDiv = document.getElementById(resultsId);
                 const spinner = this.querySelector('.loading-spinner');
 
-                // Toggle visibility if already showing
                 if (resultsDiv.style.display === 'block') {
                     resultsDiv.style.display = 'none';
-                    resultsDiv.innerHTML = ''; // Clear previous results
+                    resultsDiv.innerHTML = '';
                     return;
                 }
 
-                // Hide all other results divs
                 document.querySelectorAll('.llm-results').forEach(div => {
                     if (div.id !== resultsId) {
                         div.style.display = 'none';
-                        div.innerHTML = ''; // Clear other results
+                        div.innerHTML = '';
                     }
                 });
 
-                resultsDiv.style.display = 'none'; // Hide current before loading
-                resultsDiv.innerHTML = ''; // Clear previous results
-                spinner.style.display = 'inline-block'; // Show spinner
+                resultsDiv.style.display = 'none';
+                resultsDiv.innerHTML = '';
+                spinner.style.display = 'inline-block';
 
-                const prompt = `Sugiere 3 platos o experiencias culinarias locales típicas de ${location}. Sé conciso y menciona el nombre del plato y una breve descripción.`;
+                const prompt = `Sugiere 3 platos o experiencias culinarias locales típicas de ${location}. Sé conciso y menciona el nombre del plato y una breve descripción. Formatea la respuesta en HTML simple, usando <strong> para los nombres de los platos y <br> para separar los platos.`;
 
                 try {
-                    let chatHistory = [];
-                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-                    const payload = { contents: chatHistory };
-                    const apiKey = ""; // Leave as-is for Canvas environment
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                    // --- ¡MUY IMPORTANTE! ---
+                    // Debes generar tu propia API Key gratuita desde Google AI Studio (antes MakerSuite)
+                    // y pegarla aquí. Sin una clave, esta función mostrará un error.
+                    // Visita aistudio.google.com para obtener tu clave de API.
+                    const apiKey = "AIzaSyA3Vuobu5EpsEy8ZQ8n6zb6jhkTbwlXhaQ";
+                    
+                    if (apiKey === "AIzaSyA3Vuobu5EpsEy8ZQ8n6zb6jhkTbwlXhaQ" || apiKey === "") {
+                        throw new Error("API Key no configurada. Por favor, edita el código para añadir tu clave de la API de Gemini.");
+                    }
+
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
                     const response = await fetch(apiUrl, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
+                        body: JSON.stringify({
+                            contents: [{
+                                parts: [{ text: prompt }]
+                            }]
+                        })
                     });
 
-                    // Check for HTTP errors
                     if (!response.ok) {
                         const errorData = await response.json();
-                        throw new Error(`HTTP error! status: ${response.status}, details: ${JSON.stringify(errorData)}`);
+                        throw new Error(`Error de la API: ${response.status}. Detalles: ${JSON.stringify(errorData)}`);
                     }
 
                     const result = await response.json();
 
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
+                    if (result.candidates && result.candidates[0].content && result.candidates[0].content.parts[0]) {
                         const text = result.candidates[0].content.parts[0].text;
-                        resultsDiv.innerHTML = `<p><strong>Delicias de ${location}:</strong></p>${text.split('\n').map(item => `<p>${item}</p>`).join('')}`;
-                        resultsDiv.style.display = 'block'; // Show results
+                        resultsDiv.innerHTML = `<p><strong>Delicias de ${location}:</strong></p>${text}`;
+                        resultsDiv.style.display = 'block';
                     } else {
-                        resultsDiv.innerHTML = '<p>Lo siento, no pude obtener sugerencias de comida en este momento. La respuesta de la IA no fue la esperada.</p>';
+                        let errorMessage = '<p>Lo siento, no pude obtener sugerencias de comida en este momento.</p>';
+                        if (result.promptFeedback) {
+                             errorMessage += `<p>Razón: ${result.promptFeedback.blockReason}</p>`;
+                        } else {
+                             errorMessage += '<p>La respuesta de la IA no tuvo el formato esperado.</p>';
+                        }
+                        resultsDiv.innerHTML = errorMessage;
                         resultsDiv.style.display = 'block';
                     }
                 } catch (error) {
                     console.error("Error fetching Gemini API:", error);
-                    resultsDiv.innerHTML = `<p>Hubo un error al conectar con el servicio de sugerencias. Por favor, inténtalo de nuevo. Detalle: ${error.message}</p>`;
+                    resultsDiv.innerHTML = `<p style="color: #c0392b;"><strong>¡Error de conexión!</strong></p><p>Hubo un problema al conectar con el servicio de sugerencias. Detalle: ${error.message}</p><p>Asegúrate de tener conexión a internet y de haber introducido una API Key válida en el código.</p>`;
                     resultsDiv.style.display = 'block';
                 } finally {
-                    spinner.style.display = 'none'; // Hide spinner
+                    spinner.style.display = 'none';
                 }
             });
         });
