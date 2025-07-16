@@ -338,20 +338,20 @@
                 margin: 15px auto;
             }
             .timeline {
-                justify-content: flex-start;
+                justify-content: flex-start; /* Align buttons to the left on mobile */
                 flex-wrap: nowrap;
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
                 scrollbar-width: none;
                 padding: 15px;
-                gap: 10px; /* Reduced gap for mobile timeline */
+                gap: 8px; /* Further reduced gap for mobile timeline */
             }
             .timeline::-webkit-scrollbar {
                 display: none;
             }
             .timeline a {
-                padding: 8px 14px; /* Further reduced padding for mobile buttons */
-                font-size: 0.85em; /* Smaller font for mobile buttons */
+                padding: 6px 10px; /* Even further reduced padding for mobile buttons */
+                font-size: 0.8em; /* Even smaller font for mobile buttons */
                 flex-shrink: 0;
                 min-width: unset;
             }
