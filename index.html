@@ -575,7 +575,7 @@
             <p><strong>Distancia y tiempo conducción estimado:</strong> 0 km (día de relax en la playa) 😌</p>
             <h3>Horario:</h3>
             <ul>
-                <li><strong>09:30 – 13:00:</strong> Playa y descanso. ⛱️<br>Playa Mala Raduča: arena fina 🏖️, aguas turquesa 🌊.<br>Paseo por el casco antiguo si queréis algo de actividad suave: callejuelas, vistas al mar, la iglesia de San Jorge en lo alto del promontorio. 🚶‍♀️⛪<br>Juegos de pelota ⚽ y snorkel 🐠 </li>
+                <li><strong>09:30 – 13:00:</strong> Playa y descanso. ⛱️<br>Playa Mala Raduča: arena fina 🏖️, aguas turquesa 🌊.<br>Paseo por el casco antiguo si queréis algo de actividad suave: callejuelas, vistas al mar, la iglesia de San Jorge en lo alto del promotorio. 🚶‍♀️⛪<br>Juegos de pelota ⚽ y snorkel 🐠 </li>
                 <li><strong>14:00:</strong> Compramos comida. 🛒</li>
                 <li><strong>14:30 - 15:30:</strong> Comida. 🍽️</li>
                 <li><strong>A partir de las 15:30:</strong> Tarde a elegir:
@@ -583,7 +583,7 @@
                         <strong>🏰 Opción 1: Šibenik histórico + helado en la Riva</strong><br>Salida: 15:30 (30 min en coche) 🚗<br>Visita a:<br>Catedral de Santiago ⛪<br>Fortaleza de San Miguel (opcional) 🛡️<br>Paseo por el casco antiguo y paseo marítimo 🚶‍♀️🌊<br>🍦 Helado o refresco en las terrazas frente al mar. 🍹<br>Regreso a Primošten: 19:30 (cena en apartamentos) 🏡
                     </div>
                     <div class="highlight">
-                        <strong>🌅 Opción 2: Atardecer en la península de Primošten</strong><br>Si no queremos coger coche, nos podemos dar un paseo por la península al atardecer: 🚶‍♂️🌇<br>Ruta circular junto al mar (sendero pavimentado). 🚶‍♀️<br>Paradas para fotos 📸, bancos, pinos y miradores. 🌲🔭<br>Iglesia San Jorge, vista panorámica, atardecer. ⛪🌅<br>Cena en los apartamentos 🍽️<br>👉 Muy accesible, sin esfuerzo, precioso al atardecer. 😍
+                        <strong>🌅 Opción 2: Atardecer en la península de Primošten</strong><br>Si no queremos coger coche, nos podemos dar un paseo por la península al atardecer: 🚶‍♂️🌇<br>Ruta circular junto al mar. 🚶‍♀️<br>Paradas para fotos 📸, bancos, pinos y miradores. 🌲🔭<br>Iglesia San Jorge, vista panorámica, atardecer. ⛪🌅<br>Cena en los apartamentos 🍽️<br>👉 Muy accesible, sin esfuerzo, precioso al atardecer. 😍
                     </div>
                 </li>
             </ul>
@@ -768,7 +768,6 @@
                 resultsDiv.innerHTML = '';
                 spinner.style.display = 'inline-block';
 
-                // Petición a la IA mejorada para evitar que incluya caracteres extraños.
                 const prompt = `Sugiere 3 platos o experiencias culinarias locales típicas de ${location}. Sé conciso y menciona el nombre del plato y una breve descripción. Formatea la respuesta usando etiquetas HTML como <p> para cada plato y <strong> para el nombre del plato. No incluyas los marcadores de bloque de código de Markdown (\`\`\`html y \`\`\`) en tu respuesta. La respuesta debe ser directamente el código HTML.`;
 
                 try {
@@ -798,19 +797,24 @@
                     }
 
                     const result = await response.json();
-                    
-                    if (result.candidates && result.candidates.content && result.candidates.content.parts) {
-                        let text = result.candidates.content.parts.text;
+
+                    // --- CÓDIGO CORREGIDO ---
+                    // Esta es la parte que he arreglado. Ahora lee la respuesta correctamente.
+                    if (result.candidates && result.candidates[0] && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts[0]) {
                         
-                        // LIMPIEZA AUTOMÁTICA: Eliminamos los marcadores de Markdown si aparecen.
-                        const cleanedText = text.replace(/^```html\s*/, '').replace(/```$/, '').trim();
+                        let text = result.candidates[0].content.parts[0].text;
+                        
+                        // Limpieza por si acaso, para quitar los ` y ```
+                        const cleanedText = text.replace(/^```(html)?\s*/, '').replace(/```$/, '').trim();
 
                         resultsDiv.innerHTML = `<p><strong>Delicias de ${location}:</strong></p>${cleanedText}`;
                         resultsDiv.style.display = 'block';
+
                     } else {
+                        // Si la respuesta no viene como esperamos, mostramos este error.
                         let errorMessage = '<p>Lo siento, no pude obtener sugerencias de comida en este momento.</p>';
                         if (result.promptFeedback && result.promptFeedback.blockReason) {
-                             errorMessage += `<p>Razón: ${result.promptFeedback.blockReason}</p>`;
+                             errorMessage += `<p>Razón del bloqueo: ${result.promptFeedback.blockReason}</p>`;
                         } else {
                              errorMessage += '<p>La respuesta de la IA no tuvo el formato esperado.</p>';
                         }
@@ -818,8 +822,8 @@
                         resultsDiv.style.display = 'block';
                     }
                 } catch (error) {
-                    console.error("Error fetching Gemini API:", error);
-                    resultsDiv.innerHTML = `<p style="color: #c0392b;"><strong>¡Error de conexión!</strong></p><p>Hubo un problema al conectar con el servicio de sugerencias. Detalle: ${error.message}</p><p>Asegúrate de tener conexión a internet y de haber introducido una API Key válida en el código.</p>`;
+                    console.error("Error al conectar con la API de Gemini:", error);
+                    resultsDiv.innerHTML = `<p style="color: #c0392b;"><strong>¡Error de conexión!</strong></p><p>Hubo un problema al conectar con el servicio de sugerencias. Detalle: ${error.message}</p><p>Asegúrate de tener conexión a internet y de haber introducido una API Key válida y correcta en el código.</p>`;
                     resultsDiv.style.display = 'block';
                 } finally {
                     spinner.style.display = 'none';
